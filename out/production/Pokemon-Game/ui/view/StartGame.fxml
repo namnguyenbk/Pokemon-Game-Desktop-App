@@ -1,14 +1,124 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.effect.*?>
+<?import java.net.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="ui.view.Game"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="500.0" prefWidth="700.0" style="-fx-background-color: black;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.view.Game">
+   <children>
+      <MenuBar prefHeight="20.0" prefWidth="700.0" stylesheets="@style.css">
+        <menus>
+          <Menu mnemonicParsing="false" style="-fx-font-weight: bold;" styleClass="menu-item" text="Options">
+               <items>
+                  <Menu mnemonicParsing="false" style="-fx-font-weight: bold;" text="Language">
+                    <items>
+                        <RadioMenuItem mnemonicParsing="false" text="Vietnamese">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="lang" />
+                           </toggleGroup>
+                        </RadioMenuItem>
+                        <RadioMenuItem mnemonicParsing="false" text="English" toggleGroup="$lang" />
+                    </items>
+                  </Menu>
+                  <CheckMenuItem mnemonicParsing="false" text="Music" />
+                  <CheckMenuItem mnemonicParsing="false" text="Sound" />
+               </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Guide" />
+            </items>
+          </Menu>
+        </menus>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </MenuBar>
+      <VBox alignment="CENTER" layoutX="185.0" layoutY="124.0" prefHeight="320.0" prefWidth="165.0" spacing="20.0">
+         <children>
+            <Button id="continue-btn" alignment="CENTER" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" text="Continue">
+               <font>
+                  <Font name="Chalkboard Bold" size="15.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <styleClass>
+                  <String fx:value="deep-purple-800" />
+                  <String fx:value="btn" />
+               </styleClass>
+               <stylesheets>
+                  <URL value="@style.css" />
+                  <URL value="@jfoenix-design.css" />
+               </stylesheets>
+            </Button>
+            <Button id="new-game-btn" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" text="New Game">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <styleClass>
+                  <String fx:value="btn" />
+                  <String fx:value="light-green-800" />
+               </styleClass>
+               <stylesheets>
+                  <URL value="@style.css" />
+                  <URL value="@jfoenix-design.css" />
+               </stylesheets>
+               <font>
+                  <Font name="Chalkboard Bold" size="15.0" />
+               </font>
+            </Button>
+            <Button id="guide-btn" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" text="Guide">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <styleClass>
+                  <String fx:value="cyan-800" />
+                  <String fx:value="btn" />
+               </styleClass>
+               <stylesheets>
+                  <URL value="@style.css" />
+                  <URL value="@jfoenix-design.css" />
+               </stylesheets>
+               <font>
+                  <Font name="Chalkboard Bold" size="15.0" />
+               </font>
+            </Button>
+            <Button id="quit-btn" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" text="Quit">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <styleClass>
+                  <String fx:value="red-800" />
+                  <String fx:value="btn" />
+               </styleClass>
+               <stylesheets>
+                  <URL value="@style.css" />
+                  <URL value="@jfoenix-design.css" />
+               </stylesheets>
+               <font>
+                  <Font name="Chalkboard Bold" size="15.0" />
+               </font>
+            </Button>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </VBox>
+      <Button id="rank-btn" layoutX="14.0" layoutY="444.0" mnemonicParsing="false" style="-fx-background-color: black;" textFill="#eee3e3">
+         <font>
+            <Font name="Chalkboard SE Bold" size="13.0" />
+         </font>
+      </Button>
+   </children>
+   <effect>
+      <Bloom threshold="0.7" />
+   </effect>
 </AnchorPane>

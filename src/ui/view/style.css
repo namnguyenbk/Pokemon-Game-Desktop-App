@@ -1,0 +1,11 @@
+.btn:hover{
+    -fx-background-color: grey;
+}
+.menu-bar{
+    -fx-background-color: #FF9266;
+    -fx-font-family: Chalkboard;
+    -fx-text-fill: #ff9266;
+}
+.menu-item{
+    -fx-font-family: Chalkboard;
+}
