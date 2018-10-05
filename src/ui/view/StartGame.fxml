@@ -43,7 +43,7 @@
       </MenuBar>
       <VBox alignment="CENTER" layoutX="185.0" layoutY="124.0" prefHeight="320.0" prefWidth="165.0" spacing="20.0">
          <children>
-            <Button id="continue-btn" alignment="CENTER" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" text="Continue">
+            <Button id="continue-btn" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" text="Continue">
                <font>
                   <Font name="Chalkboard Bold" size="15.0" />
                </font>
@@ -59,7 +59,7 @@
                   <URL value="@jfoenix-design.css" />
                </stylesheets>
             </Button>
-            <Button id="new-game-btn" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" text="New Game">
+            <Button id="new-game-btn" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" text="New Game">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -75,7 +75,7 @@
                   <Font name="Chalkboard Bold" size="15.0" />
                </font>
             </Button>
-            <Button id="guide-btn" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" text="Guide">
+            <Button id="guide-btn" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" text="Guide">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -91,7 +91,7 @@
                   <Font name="Chalkboard Bold" size="15.0" />
                </font>
             </Button>
-            <Button id="quit-btn" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" text="Quit">
+            <Button id="quit-btn" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" text="Quit">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
