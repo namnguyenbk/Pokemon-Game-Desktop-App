@@ -11,3 +11,6 @@
 .menu-item{
     -fx-font-family: Chalkboard;
 }
+.main{
+    -fx-background-image: url("src/resource/image/background1.jpg");
+}
