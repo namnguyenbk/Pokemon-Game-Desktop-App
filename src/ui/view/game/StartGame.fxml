@@ -14,7 +14,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="550.0" maxWidth="800.0" minHeight="550.0" minWidth="800.0" prefHeight="550.0" prefWidth="800.0" snapToPixel="false" style="-fx-background-color: black;" stylesheets="@../style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.controller.ToolsController">
+<AnchorPane maxHeight="550.0" maxWidth="800.0" minHeight="550.0" minWidth="800.0" prefHeight="550.0" prefWidth="800.0" snapToPixel="false" style="-fx-background-color: black;" styleClass="main" stylesheets="@../style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.controller.StartGameController">
    <children>
       <MenuBar prefHeight="20.0" prefWidth="800.0" stylesheets="@../style.css" visible="false">
         <menus>
@@ -49,7 +49,7 @@
       </MenuBar>
       <VBox alignment="CENTER" layoutX="219.0" layoutY="175.0" prefHeight="320.0" prefWidth="165.0" spacing="20.0">
          <children>
-            <Button id="continue-btn" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="50.0" prefWidth="170.0" text="Continue">
+            <Button id="continue-btn" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="50.0" prefWidth="170.0" text="Continue" visible="false">
                <font>
                   <Font name="Chalkboard Bold" size="17.0" />
                </font>
@@ -68,7 +68,7 @@
                   <Bloom threshold="0.62" />
                </effect>
             </Button>
-            <Button id="new-game-btn" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="50.0" prefWidth="170.0" text="New Game">
+            <Button id="new-game-btn" fx:id="newGameBtn" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#newGame" prefHeight="50.0" prefWidth="170.0" text="New Game">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -87,7 +87,7 @@
                   <Bloom threshold="0.7" />
                </effect>
             </Button>
-            <Button id="guide-btn" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="50.0" prefWidth="170.0" text="Guide">
+            <Button id="guide-btn" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#newGame" prefHeight="50.0" prefWidth="170.0" text="Guide">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -106,7 +106,7 @@
                   <Bloom threshold="0.66" />
                </effect>
             </Button>
-            <Button id="quit-btn" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="50.0" prefWidth="170.0" text="Quit">
+            <Button id="quit-btn" fx:id="quitGameBtn" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#quitGame" prefHeight="50.0" prefWidth="170.0" text="Quit">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
