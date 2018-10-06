@@ -5,14 +5,14 @@ public class LastPlay {
     private int level;
     private int suggestNum;
     private GameMap gameMap;
-    private boolean isTurnOnSound;
-    private boolean isTurnOnMusic;
+//    private boolean isTurnOnSound;
+//    private boolean isTurnOnMusic;
     private int currentTime;
 
     public LastPlay(){
         this.gameMap = null;
-        this.isTurnOnMusic = false;
-        this.isTurnOnSound = false;
+//        this.isTurnOnMusic = false;
+//        this.isTurnOnSound = false;
         this.level = 0;
         this.score = 0;
         this.suggestNum = 5;
@@ -25,8 +25,8 @@ public class LastPlay {
         this.level = level;
         this.currentTime = currentTime;
         this.gameMap = gameMap;
-        this.isTurnOnSound = isTurnOnSound;
-        this.isTurnOnMusic = isTurnOnMusic;
+//        this.isTurnOnSound = isTurnOnSound;
+//        this.isTurnOnMusic = isTurnOnMusic;
     }
     // getter and setter
     public int getScore() {
@@ -53,21 +53,21 @@ public class LastPlay {
         this.gameMap = gameMap;
     }
 
-    public boolean isTurnOnSound() {
-        return isTurnOnSound;
-    }
+//    public boolean isTurnOnSound() {
+//        return isTurnOnSound;
+//    }
 
-    public void setTurnOnSound(boolean turnOnSound) {
-        isTurnOnSound = turnOnSound;
-    }
-
-    public boolean isTurnOnMusic() {
-        return isTurnOnMusic;
-    }
-
-    public void setTurnOnMusic(boolean turnOnMusic) {
-        isTurnOnMusic = turnOnMusic;
-    }
+//    public void setTurnOnSound(boolean turnOnSound) {
+//        isTurnOnSound = turnOnSound;
+//    }
+//
+//    public boolean isTurnOnMusic() {
+//        return isTurnOnMusic;
+//    }
+//
+//    public void setTurnOnMusic(boolean turnOnMusic) {
+//        isTurnOnMusic = turnOnMusic;
+//    }
 
     public int getSuggestNum() {
         return suggestNum;

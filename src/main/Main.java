@@ -1,7 +1,9 @@
 package main;
 
-import ui.view.Game;
+import models.Media;
+import ui.view.game.Game;
 public class Main {
+    public static  Media media = new Media();
     public static void main(String[] args) {
         Game.init(args);
     }

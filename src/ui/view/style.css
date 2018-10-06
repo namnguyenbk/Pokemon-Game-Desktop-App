@@ -2,9 +2,11 @@
     -fx-background-color: grey;
 }
 .menu-bar{
-    -fx-background-color: #FF9266;
+    -fx-background-color: #431a20;
+    -fx-font-size: 13px;
     -fx-font-family: Chalkboard;
     -fx-text-fill: #ff9266;
+    -fx-border-radius: 5%;
 }
 .menu-item{
     -fx-font-family: Chalkboard;
