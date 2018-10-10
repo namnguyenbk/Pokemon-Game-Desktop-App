@@ -21,7 +21,7 @@ public class StartGameController implements Initializable {
     private Button newGameBtn;
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        musicPlayer = ToolsController.loadMedia( musicPlayer, music, "src/resource/sound/music1.mp3");
+        musicPlayer = ToolsController.loadMedia( musicPlayer, music, "src/resource/sound/music2.mp3");
     }
     public void toggleMusic(ActionEvent event){
         ToolsController.toggleMusic(musicPlayer, controlMusic);

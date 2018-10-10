@@ -33,7 +33,7 @@ public class ToolsController implements Initializable {
     public static void toggleMusic(MediaPlayer musicPlayer, Button controlMusic){
         if(Main.media.getMusic()){
             Main.media.setMusic(false);
-            musicPlayer.pause();
+            musicPlayer.stop();
             Utility.setIconButton(controlMusic, "src/resource/image/soundeffectmute.png", 40.0, 40.0 );
         }else{
             Main.media.setMusic(true);

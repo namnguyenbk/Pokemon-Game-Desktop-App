@@ -5,12 +5,14 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import ui.utility.Utility;
+import ui.view.play.GridPokemon;
 
 import java.io.File;
 import java.io.IOException;
@@ -65,6 +67,7 @@ public class Game extends Application {
         Utility.createImageView("src/resource/image/pokemon_banner.png", "#banner", parent, null, null);
         Utility.createImageView("src/resource/image/pikachuIcon.png","#img-2", parent, null, null);
         Utility.createImageView("src/resource/image/artGif.gif","#gif-1", parent, null, null);
+        Utility.createImageView("src/resource/image/ball2.gif","#gif-2", parent, null, null);
     }
 
     public static void init(String[] args) {

@@ -144,13 +144,15 @@
          </effect>
       </ImageView>
       <ImageView id="img-4" fitHeight="29.0" fitWidth="25.0" layoutX="102.0" layoutY="146.0" pickOnBounds="true" preserveRatio="true" visible="false" />
-      <ImageView id="banner" fitHeight="197.0" fitWidth="444.0" layoutX="102.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView id="banner" fitHeight="214.0" fitWidth="473.0" layoutX="102.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView id="img-2" fitHeight="150.0" fitWidth="200.0" layoutX="50.0" layoutY="211.0" pickOnBounds="true" preserveRatio="true" />
       <Button id="music-start-btn" fx:id="controlMusic" layoutX="115.0" layoutY="487.0" mnemonicParsing="false" onAction="#toggleMusic" style="-fx-background-color: black;">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
-      <ImageView id="gif-1" fitHeight="91.0" fitWidth="114.0" layoutX="500.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView id="gif-1" fitHeight="109.0" fitWidth="132.0" layoutX="520.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView id="gif-1" fitHeight="109.0" fitWidth="132.0" layoutX="530.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView id="gif-2" fitHeight="42.0" fitWidth="42.0" layoutX="530.0" layoutY="237.0" pickOnBounds="true" preserveRatio="true" />
    </children>
    <opaqueInsets>
       <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
