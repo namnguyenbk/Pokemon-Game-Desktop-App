@@ -4,19 +4,12 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ScrollPane;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 import ui.utility.Utility;
 import ui.view.play.GridPokemon;
 
-import java.io.File;
 import java.io.IOException;
-import java.net.MalformedURLException;
 
 public class Game extends Application {
     public static Scene StartScene;
@@ -26,14 +19,14 @@ public class Game extends Application {
         AnchorPane start = FXMLLoader.load(getClass().getResource("StartGame.fxml"));
         start.setMaxSize(800, 550);
         primaryStage.setTitle("PIKACHU LEGEND");
-        addIconBtnMenu(start);
-        addImageView(start);
+//        addIconBtnMenu(start);
+//        addImageView(start);
         StartScene = new Scene(start, 805, 555);
         primaryStage.setResizable(false);
        // primaryStage.initStyle(StageStyle.UNDECORATED);
         primaryStage.setScene(StartScene);
-//        ScrollPane scrollPane = new ScrollPane(GridPokemon.initGrid());
-//        primaryStage.setScene(new Scene(scrollPane));
+        AnchorPane gridPokemon = new AnchorPane(GridPokemon.initGrid());
+        primaryStage.setScene(new Scene(gridPokemon));
         primaryStage.show();
     }
 

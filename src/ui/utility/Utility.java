@@ -10,9 +10,10 @@ import java.net.MalformedURLException;
 
 public class Utility {
     // Using id
-    public static void setIconButton(Button button, String url, Double width, Double height){
+    public static Button setIconButton(Button button, String url, Double width, Double height){
         ImageView icon = createIcon(url, width, height);
         button.setGraphic(icon);
+        return button;
     }
     // Using selector
     public static void setIconButton(Parent root, String selector, String sourceIcon, Double width, Double height){
