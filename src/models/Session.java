@@ -1,5 +1,6 @@
 package models;
 
+import java.io.*;
 import java.util.Date;
 
 public class Session {
@@ -13,7 +14,7 @@ public class Session {
         this.lastPlay = lastPlay;
         this.timeRemaining = 5*60 - this.lastPlay.getCurrentTime();
     }
-// getter and setter
+    // getter and setter
     public int getTimeRemaining() {
         return timeRemaining;
     }
@@ -35,7 +36,6 @@ public class Session {
         this.timeRemaining -= 1;
     }
     // restart session
-
     public Session restartSession(){
         this.timeRemaining = 5*60;
         this.lastPlay.setScore(0);
@@ -46,4 +46,27 @@ public class Session {
         //
         return this;
     }
+     public void saveToFile() throws IOException {
+         try {
+             FileOutputStream fileOut = new FileOutputStream("data.txt");
+             ObjectOutputStream objectOut = new ObjectOutputStream(fileOut);
+             objectOut.writeObject(this.lastPlay);
+             objectOut.close();
+             System.out.println("write successfully!");
+         }catch (Exception ex){
+             ex.printStackTrace();
+         }
+     }
+
+     public void getDataFromFile() throws IOException {
+         try {
+             FileInputStream fileIn = new FileInputStream("data.txt");
+             ObjectInputStream objectIn = new ObjectInputStream(fileIn);
+             this.lastPlay = (LastPlay)objectIn.readObject();
+             objectIn.close();
+         }catch (Exception ex){
+             ex.printStackTrace();
+         }
+
+     }
 }
