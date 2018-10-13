@@ -40,4 +40,11 @@ public class ToolBarController implements Initializable {
             Utility.setIconButton(controlMusic, "src/resource/image/soundeffect.png", 40.0, 40.0 );
         }
     }
+    public static void toggleSound(){
+        if (Main.media.getSound()){
+            Main.media.setSound(false);
+        }else {
+            Main.media.setSound(true);
+        }
+    }
 }

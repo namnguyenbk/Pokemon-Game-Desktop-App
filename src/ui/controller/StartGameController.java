@@ -9,6 +9,7 @@ import javafx.scene.control.Menu;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
+import ui.view.game.Game;
 import ui.view.play.GridPokemon;
 import ui.view.play.PlayGameScene;
 
@@ -26,7 +27,7 @@ public class StartGameController implements Initializable {
     private Button newGameBtn;
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-      //  musicPlayer = ToolBarController.loadMedia( musicPlayer, music, "src/resource/sound/music2.mp3");
+       // musicPlayer = ToolBarController.loadMedia( musicPlayer, music, "src/resource/sound/music3.mp3");
         setVisbleContinueGame();
     }
     public void toggleMusic(ActionEvent event){
@@ -44,10 +45,6 @@ public class StartGameController implements Initializable {
         MenuController.toogleContinueBtn(continueGameBtn);
     }
     public void setNewGame(){
-        String timeStamp1 = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
-        System.out.println(timeStamp1);
-        PlayGameScene playNewGame = new PlayGameScene();
-        String timeStamp2 = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
-        System.out.println(timeStamp2);
+        PlayGameController.newGame();
     }
 }

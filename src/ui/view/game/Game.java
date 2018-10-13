@@ -52,6 +52,9 @@ public class Game extends Application {
     public static Stage getMainStage(){
         return mainStage;
     }
+    public static Scene getStartScene(){
+        return startScene;
+    }
     public static PlayGameScene getPlayStage(){
         return playGameScene;
     }

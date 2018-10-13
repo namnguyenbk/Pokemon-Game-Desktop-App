@@ -20,7 +20,6 @@ public class GridPokemon {
         gridPokemon.setPadding(new Insets(5));
         gridPokemon.setHgap(0);
         gridPokemon.setVgap(0);
-//        int[][] map = Shuffle.init();
         String preUrl = "src/resource/image/icon";
         for (int r = 0; r < 9; r++) {
             for (int c = 0; c < 16; c++) {
@@ -28,7 +27,6 @@ public class GridPokemon {
                 Button button = new Button();
                 button = Utility.setIconButton(button,preUrl + map1.get(index).getId() + ".png", 50.0, 50.0 );
                 button.setPadding(new Insets(2,2,2,2));
-//                button = Utility.setIconButton(button,preUrl + map[r][c] + ".png", 50.0, 50.0 );
                 button.getStyleClass().add("btnPokemon");
                 gridPokemon.add(button, c, r);
             }

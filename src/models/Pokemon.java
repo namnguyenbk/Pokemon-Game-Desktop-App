@@ -18,7 +18,6 @@ public class Pokemon {
         this.id = id;
         this.isHidden = false;
     }
-// getter and setter
     public int getId() {
         return id;
     }
@@ -28,7 +27,6 @@ public class Pokemon {
     }
 
 
-// so sanh 2 pokemon thong qua name
     public boolean isCompatibleWith(Pokemon otherPokemon){
         return this.getName() == otherPokemon.getName();
     }

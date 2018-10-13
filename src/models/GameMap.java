@@ -15,8 +15,8 @@ public class GameMap {
 
     public ArrayList<Pokemon> setMapPokemon(int[][] map) {
         mapPokemon = new ArrayList<Pokemon>();
-        for(int i = 0; i< map.length; i++){
-            for(int j = 0; j < map[i].length; j++){
+        for(int i = 1; i< map.length -1; i++){
+            for(int j = 1; j < map[i].length -1; j++){
                 Pokemon pokemon = new Pokemon(map[i][j]);
                 mapPokemon.add(pokemon);
             }
