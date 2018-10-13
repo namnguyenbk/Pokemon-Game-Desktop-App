@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="" />
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Thuật toán chọn 1.0">
+      <change afterPath="$PROJECT_DIR$/src/algorithms/Matching.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pokemon-Game/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pokemon-Game/main/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pokemon-Game/ui/view/Game.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pokemon-Game/ui/view/PlayGame.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pokemon-Game/ui/view/StartGame.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pokemon-Game/ui/view/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pokemon-Game/ui/view/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/algorithms/Shuffle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/algorithms/Shuffle.java" afterDir="false" />
+    </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -99,6 +109,39 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="1006350318">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="2" />
+          <entry key="project.open.time.14" value="1" />
+          <entry key="project.open.time.2" value="1" />
+          <entry key="project.open.time.3" value="1" />
+          <entry key="project.opened" value="3" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="java" value="12" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="JAVA" value="12" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="java" value="3802" />
+          <entry key="txt" value="42" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="3802" />
+          <entry key="PLAIN_TEXT" value="42" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FavoritesManager">
     <favorites_list name="JavaFxApplication">
@@ -107,26 +150,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ui/view/Game.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/algorithms/Shuffle.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="300">
-              <caret line="20" column="28" lean-forward="true" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+              <caret line="31" column="11" selection-start-line="31" selection-start-column="11" selection-end-line="31" selection-end-column="11" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/Main.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/algorithms/Matching.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="8" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="340">
+              <caret line="107" column="27" selection-start-line="107" selection-start-column="27" selection-end-line="107" selection-end-column="27" />
             </state>
           </provider>
         </entry>
@@ -137,8 +174,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="FxmlFile" />
-        <option value="Class" />
         <option value="JavaFXApplication" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -146,6 +183,9 @@
     <FindUsagesManager>
       <setting name="OPEN_NEW_TAB" value="false" />
     </FindUsagesManager>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -159,6 +199,9 @@
         <option value="$PROJECT_DIR$/src/ui/view/Game.java" />
         <option value="$PROJECT_DIR$/src/ui/view/PlayGame.fxml" />
         <option value="$PROJECT_DIR$/src/main/Main.java" />
+        <option value="$PROJECT_DIR$/src/models/Shuffle.java" />
+        <option value="$PROJECT_DIR$/src/algorithms/Matching.java" />
+        <option value="$PROJECT_DIR$/src/algorithms/Shuffle.java" />
       </list>
     </option>
   </component>
@@ -169,11 +212,11 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="y" value="23" />
-    <option name="width" value="1440" />
-    <option name="height" value="832" />
+  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
+    <option name="width" value="1920" />
+    <option name="height" value="1080" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectReloadState">
     <option name="STATE" value="0" />
   </component>
@@ -182,7 +225,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -200,13 +243,38 @@
               <item name="Pokemon-Game" type="b2602c69:ProjectViewProjectNode" />
               <item name="Pokemon-Game" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="algorithms" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Pokemon-Game" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Pokemon-Game" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Pokemon-Game" type="b2602c69:ProjectViewProjectNode" />
               <item name="Pokemon-Game" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Pokemon-Game" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Pokemon-Game" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="resource" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Pokemon-Game" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Pokemon-Game" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="ui" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Pokemon-Game" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Pokemon-Game" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="ui" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Pokemon-Game" type="b2602c69:ProjectViewProjectNode" />
@@ -215,11 +283,18 @@
               <item name="ui" type="462c0819:PsiDirectoryNode" />
               <item name="view" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Pokemon-Game" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Pokemon-Game" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="ui" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="game" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -232,9 +307,154 @@
     <property name="OverrideImplement.combined" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1538660832854" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539439579229" />
     <property name="dynamic.classpath" value="false" />
     <property name="recentsLimit" value="5" />
+  </component>
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/models/GameMap.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/models/LastPlay.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/models/Pokemon.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/models/Session.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/ui/controller/StartGameController.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/ui/controller/ToolsController.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/ui/utility/Utility.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/ui/view/game/Game.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/ui/view/game/StartGame.fxml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/ui/view/play/GridPokemon.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/ui/view/play/PokemonView.java</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/.gitignore</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/algorithms/Shuffle.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/resource/image/ball.gif</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/resource/image/ball1.gif</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/resource/image/ball2.gif</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/resource/image/ball3.gif</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/resource/image/music2.mp3</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/resource/sound/music2.mp3</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/resource/image/180px-Ash_BW.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/resource/image/background1.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/resource/image/background2.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/resource/image/common_google_signin_btn_icon_dark.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/resource/image/common_google_signin_btn_icon_dark_focused.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/resource/image/common_google_signin_btn_icon_dark_normal.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/resource/image/common_google_signin_btn_icon_disabled.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/resource/image/common_google_signin_btn_icon_light.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/resource/image/common_google_signin_btn_icon_light_focused.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/resource/image/common_google_signin_btn_icon_light_normal.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/resource/image/common_google_signin_btn_text_dark.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/resource/image/common_google_signin_btn_text_dark_focused.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/resource/image/common_google_signin_btn_text_dark_normal.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/resource/image/common_google_signin_btn_text_disabled.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/resource/image/common_google_signin_btn_text_light.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/resource/image/common_google_signin_btn_text_light_focused.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/resource/image/common_google_signin_btn_text_light_normal.xml</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -340,10 +560,10 @@
     <option name="totallyTimeSpent" value="9449000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <frame x="0" y="0" width="1536" height="864" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.2918455" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.17583893" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" />
       <window_info id="Designer" order="3" />
@@ -351,19 +571,19 @@
       <window_info id="UI Designer" order="5" />
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32891566" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32885906" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.33628318" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Application Servers" order="7" />
-      <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32968536" />
       <window_info anchor="bottom" id="Problems" order="9" />
       <window_info anchor="bottom" id="Changes" order="10" />
       <window_info anchor="bottom" id="Profiler" order="11" />
       <window_info anchor="bottom" id="Event Log" order="12" />
-      <window_info anchor="bottom" id="Messages" order="13" />
+      <window_info active="true" anchor="bottom" id="Messages" order="13" visible="true" weight="0.32996207" />
       <window_info anchor="bottom" id="Database Changes" order="14" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="15" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -422,124 +642,115 @@
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
+    <MESSAGE value="Thuật toán chọn 1.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="Thuật toán chọn 1.0" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/lib/jFoenix/font/roboto/Roboto-Black.ttf">
-      <provider selected="true" editor-type-id="fontseditor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/jFoenix/font/roboto/Roboto-BlackItalic.ttf">
-      <provider selected="true" editor-type-id="fontseditor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/jFoenix/font/roboto/Roboto-Bold.ttf">
-      <provider selected="true" editor-type-id="fontseditor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/jFoenix/font/roboto/Roboto-BoldItalic.ttf">
-      <provider selected="true" editor-type-id="fontseditor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/jFoenix/font/roboto/Roboto-Italic.ttf">
-      <provider selected="true" editor-type-id="fontseditor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/jFoenix/font/roboto/Roboto-Light.ttf">
-      <provider selected="true" editor-type-id="fontseditor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/jFoenix/font/roboto/Roboto-LightItalic.ttf">
-      <provider selected="true" editor-type-id="fontseditor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/jFoenix/font/roboto/Roboto-Medium.ttf">
-      <provider selected="true" editor-type-id="fontseditor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resource/icon4.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resource/icon2.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resource/icon.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resource/gift.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resource/help.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resource/border_icon_min_9_12.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/bootstrap.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/jFoenix/font/roboto/RobotoCondensed-BoldItalic.ttf">
-      <provider selected="true" editor-type-id="fontseditor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/jFoenix/font/roboto/Roboto-ThinItalic.ttf">
-      <provider selected="true" editor-type-id="fontseditor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/jFoenix/font/roboto/Roboto-MediumItalic.ttf">
-      <provider selected="true" editor-type-id="fontseditor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/jFoenix/font/roboto/Roboto-Black.ttf" />
+    <entry file="file://$PROJECT_DIR$/lib/jFoenix/font/roboto/Roboto-BlackItalic.ttf" />
+    <entry file="file://$PROJECT_DIR$/lib/jFoenix/font/roboto/Roboto-Bold.ttf" />
+    <entry file="file://$PROJECT_DIR$/lib/jFoenix/font/roboto/Roboto-BoldItalic.ttf" />
+    <entry file="file://$PROJECT_DIR$/lib/jFoenix/font/roboto/Roboto-Italic.ttf" />
+    <entry file="file://$PROJECT_DIR$/lib/jFoenix/font/roboto/Roboto-Light.ttf" />
+    <entry file="file://$PROJECT_DIR$/lib/jFoenix/font/roboto/Roboto-LightItalic.ttf" />
+    <entry file="file://$PROJECT_DIR$/lib/jFoenix/font/roboto/Roboto-Medium.ttf" />
+    <entry file="file://$PROJECT_DIR$/resource/icon4.png" />
+    <entry file="file://$PROJECT_DIR$/resource/icon2.png" />
+    <entry file="file://$PROJECT_DIR$/resource/icon.png" />
+    <entry file="file://$PROJECT_DIR$/resource/gift.png" />
+    <entry file="file://$PROJECT_DIR$/resource/help.png" />
+    <entry file="file://$PROJECT_DIR$/resource/border_icon_min_9_12.xml" />
+    <entry file="file://$PROJECT_DIR$/lib/bootstrap.css" />
+    <entry file="file://$PROJECT_DIR$/lib/jFoenix/font/roboto/RobotoCondensed-BoldItalic.ttf" />
+    <entry file="file://$PROJECT_DIR$/lib/jFoenix/font/roboto/Roboto-ThinItalic.ttf" />
+    <entry file="file://$PROJECT_DIR$/lib/jFoenix/font/roboto/Roboto-MediumItalic.ttf" />
     <entry file="file://$PROJECT_DIR$/Pokemon-Game.iml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/sample.fxml">
+    <entry file="file://$PROJECT_DIR$/src/main/sample.fxml" />
+    <entry file="file://$PROJECT_DIR$/src/main/Controller.java" />
+    <entry file="file://$PROJECT_DIR$/src/ui/view/StartGame.fxml" />
+    <entry file="file://$PROJECT_DIR$/src/ui/view/PlayGame.fxml" />
+    <entry file="file://$PROJECT_DIR$/src/ui/view/lol.java" />
+    <entry file="file://$PROJECT_DIR$/src/ui/view/Game.java" />
+    <entry file="file://$PROJECT_DIR$/src/models/Shuffle.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        <state relative-caret-position="390">
+          <caret line="13" column="5" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Controller.java">
+    <entry file="file://$PROJECT_DIR$/src/models/Media.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
+        <state relative-caret-position="60">
           <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/view/StartGame.fxml">
+    <entry file="file://$PROJECT_DIR$/src/ui/view/game/Game.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="13" lean-forward="true" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/view/PlayGame.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="39" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/view/lol.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="8" column="21" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/view/Game.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="28" lean-forward="true" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
+        <state relative-caret-position="1710">
+          <caret line="66" column="11" lean-forward="true" selection-start-line="66" selection-start-column="11" selection-end-line="66" selection-end-column="11" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#2820#2821#0" expanded="true" />
+            <element signature="e#2848#2849#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/GameMap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/Session.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-473">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="8" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
+        <state relative-caret-position="120">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/controller/StartGameController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-83">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/controller/MenuController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/algorithms/Matching.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="107" column="27" selection-start-line="107" selection-start-column="27" selection-end-line="107" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/algorithms/Shuffle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="31" column="11" selection-start-line="31" selection-start-column="11" selection-end-line="31" selection-end-column="11" />
         </state>
       </provider>
     </entry>
