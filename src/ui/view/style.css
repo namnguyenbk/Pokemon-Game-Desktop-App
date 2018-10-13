@@ -11,4 +11,17 @@
 .menu-item{
     -fx-font-family: Chalkboard;
 }
-
+.btnPokemon{
+    -fx-background-color: #5b4f57;
+    -fx-cursor: pointer;
+    -fx-border-style: solid;
+}
+.btnPokemon:focused{
+    -fx-background-color: grey;
+}
+#borderPanePlayGame{
+    -fx-background-image: url("file:///Users/apple/Documents/20181/OOP/Pokemon-Game/src/resource/image/mewtwo2.jpg");
+    -fx-background-size:  950 500;
+    -fx-background-repeat: stretch;
+    -fx-background-position: center center;
+}

@@ -6,43 +6,30 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import ui.utility.Utility;
 import ui.view.play.GridPokemon;
+import ui.view.play.PlayGameScene;
 
 import java.io.IOException;
 
 public class Game extends Application {
-    public static Scene StartScene;
-    public static Scene PlayScene;
+    private static Scene startScene;
+    private static PlayGameScene playGameScene;
+    private static Stage mainStage;
     @Override
     public void start(Stage primaryStage) throws IOException {
+        mainStage = primaryStage;
         AnchorPane start = FXMLLoader.load(getClass().getResource("StartGame.fxml"));
         start.setMaxSize(800, 550);
-        primaryStage.setTitle("PIKACHU LEGEND");
-//        addIconBtnMenu(start);
-//        addImageView(start);
-        StartScene = new Scene(start, 805, 555);
-        primaryStage.setResizable(false);
-       // primaryStage.initStyle(StageStyle.UNDECORATED);
-        primaryStage.setScene(StartScene);
-        AnchorPane gridPokemon = new AnchorPane(GridPokemon.initGrid());
-        primaryStage.setScene(new Scene(gridPokemon));
-        primaryStage.show();
-    }
-
-    private Scene getPlayScene(){
-        Parent play = null;
-        try {
-            play = FXMLLoader.load(getClass().getResource("PlayGame.fxml"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        PlayScene = new Scene(play);
-        return PlayScene;
-    }
-
-    private void nextScene( Scene nextScene){
-
+        mainStage.setTitle("PIKACHU LEGEND");
+        addIconBtnMenu(start);
+        addImageView(start);
+        startScene = new Scene(start, 805, 555);
+        mainStage.setResizable(false);
+        mainStage.initStyle(StageStyle.UNDECORATED);
+        mainStage.setScene(startScene);
+        mainStage.show();
     }
 
     private void addIconBtnMenu(Parent parent){
@@ -62,7 +49,15 @@ public class Game extends Application {
         Utility.createImageView("src/resource/image/artGif.gif","#gif-1", parent, null, null);
         Utility.createImageView("src/resource/image/ball2.gif","#gif-2", parent, null, null);
     }
-
+    public static Stage getMainStage(){
+        return mainStage;
+    }
+    public static PlayGameScene getPlayStage(){
+        return playGameScene;
+    }
+    public static void setPlayScene( PlayGameScene playScene){
+        playGameScene = playScene;
+    }
     public static void init(String[] args) {
         launch(args);
     }

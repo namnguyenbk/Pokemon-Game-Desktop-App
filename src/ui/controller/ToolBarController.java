@@ -1,6 +1,5 @@
 package ui.controller;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.media.Media;
@@ -11,7 +10,7 @@ import ui.utility.Utility;
 import java.io.File;
 import java.net.URL;
 import java.util.ResourceBundle;
-public class ToolsController implements Initializable {
+public class ToolBarController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {

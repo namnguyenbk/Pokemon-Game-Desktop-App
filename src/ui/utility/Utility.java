@@ -13,6 +13,7 @@ public class Utility {
     public static Button setIconButton(Button button, String url, Double width, Double height){
         ImageView icon = createIcon(url, width, height);
         button.setGraphic(icon);
+        icon = null;
         return button;
     }
     // Using selector
@@ -20,6 +21,7 @@ public class Utility {
         ImageView icon = Utility.createIcon(sourceIcon, width, height);
         Button rankBtn = (Button) root.lookup(selector);
         rankBtn.setGraphic(icon);
+        icon  = null;
     }
 
     public static ImageView createIcon( String url, Double width, Double height){

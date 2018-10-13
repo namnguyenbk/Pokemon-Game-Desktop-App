@@ -1,5 +1,7 @@
 package models;
 
+import algorithms.Shuffle;
+
 import java.util.ArrayList;
 
 public class GameMap {
@@ -7,27 +9,19 @@ public class GameMap {
     private int height;
     private int width;
     private int level;
-// constructor
-    public GameMap(){
-        this.mapPokemon = null;
-        this.height = 0;
-        this.width = 0;
-        this.level = 0;
+    public ArrayList<Pokemon> getMap() {
+        return this.mapPokemon;
     }
 
-    public GameMap(ArrayList<Pokemon> mapPokemon, int height, int width, int level){
-        this.mapPokemon = mapPokemon;
-        this.height = height;
-        this.width = width;
-        this.level = level;
-    }
-// getter and setter
-    public ArrayList<Pokemon> getMapItem() {
-        return mapPokemon;
-    }
-
-    public void setMapItem(ArrayList<Pokemon> mapPokemon) {
-        this.mapPokemon = mapPokemon;
+    public ArrayList<Pokemon> setMapPokemon(int[][] map) {
+        mapPokemon = new ArrayList<Pokemon>();
+        for(int i = 0; i< map.length; i++){
+            for(int j = 0; j < map[i].length; j++){
+                Pokemon pokemon = new Pokemon(map[i][j]);
+                mapPokemon.add(pokemon);
+            }
+        }
+        return this.mapPokemon;
     }
 
     public int getHeight() {
@@ -53,16 +47,29 @@ public class GameMap {
     public void setLevel(int level) {
         this.level = level;
     }
-    // merge
-    public void merge(){
+    public void shuffle(){
         //todo
     }
 
-    public void updateStatusMap(ArrayList<Pokemon> mapPokemon, int height, int width, int level){
-        this.mapPokemon = mapPokemon;
+    public void updateStatusMap(int[][] map, int height, int width, int level){
+        this.mapPokemon = setMapPokemon( map);
         this.level = level;
         this.height = height;
         this.width = width;
+    }
+    // Map default
+    public GameMap(){
+        this.mapPokemon = setMapPokemon( Shuffle.init());
+        this.height = 9;
+        this.width = 16;
+        this.level = 0;
+    }
+
+    public GameMap(ArrayList<Pokemon> mapPokemon, int height, int width, int level){
+        this.mapPokemon = mapPokemon;
+        this.height = height;
+        this.width = width;
+        this.level = level;
     }
 
 }

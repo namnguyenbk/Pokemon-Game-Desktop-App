@@ -49,7 +49,7 @@
       </MenuBar>
       <VBox alignment="CENTER" layoutX="219.0" layoutY="175.0" prefHeight="320.0" prefWidth="165.0" spacing="20.0">
          <children>
-            <Button id="continue-btn" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="50.0" prefWidth="170.0" text="Continue" visible="false">
+            <Button id="continue-btn" fx:id="continueGameBtn" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="50.0" prefWidth="170.0" text="Continue">
                <font>
                   <Font name="Chalkboard Bold" size="17.0" />
                </font>
@@ -68,7 +68,7 @@
                   <Bloom threshold="0.62" />
                </effect>
             </Button>
-            <Button id="new-game-btn" fx:id="newGameBtn" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#newGame" prefHeight="50.0" prefWidth="170.0" text="New Game">
+            <Button id="new-game-btn" fx:id="newGameBtn" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#setNewGame" prefHeight="50.0" prefWidth="170.0" text="New Game">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>

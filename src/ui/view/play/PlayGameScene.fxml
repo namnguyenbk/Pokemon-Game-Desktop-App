@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane id="borderPanePlayGame" fx:id="borderPanePlayGame" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="950.0" style="-fx-background-color: black;" stylesheets="@../style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.controller.PlayGameController">
+    <top>
+        <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <children>
+                <AnchorPane prefHeight="21.0" prefWidth="950.0">
+                    <children>
+                        <ProgressBar fx:id="timeLife" layoutX="212.0" layoutY="22.0" prefHeight="32.0" prefWidth="645.0" progress="0.0" AnchorPane.leftAnchor="212.0" AnchorPane.rightAnchor="93.0" AnchorPane.topAnchor="22.0" />
+                        <Button fx:id="matchView" layoutX="83.0" layoutY="25.0" mnemonicParsing="false" />
+                    </children>
+                </AnchorPane>
+            </children>
+        </HBox>
+    </top>
+    <bottom>
+        <HBox prefHeight="77.0" prefWidth="950.0" spacing="40.0" BorderPane.alignment="CENTER">
+            <children>
+                <Button fx:id="shuffleBtn" mnemonicParsing="false">
+                    <HBox.margin>
+                        <Insets left="280.0" />
+                    </HBox.margin>
+                </Button>
+                <Button fx:id="mediaBtn" mnemonicParsing="false" />
+                <Button fx:id="saveGameBtn" contentDisplay="RIGHT" mnemonicParsing="false" />
+                <Button fx:id="backToGamebtn" contentDisplay="RIGHT" mnemonicParsing="false" />
+            </children>
+            <BorderPane.margin>
+                <Insets />
+            </BorderPane.margin>
+            <padding>
+                <Insets top="20.0" />
+            </padding>
+        </HBox>
+    </bottom>
+   <opaqueInsets>
+      <Insets left="5.0" />
+   </opaqueInsets>
+</BorderPane>

@@ -68,14 +68,14 @@ public class LastPlay implements Serializable {
         this.currentTime = currentTime;
     }
 
-    public GameMap initNewGame(){
-        int[][] map = Shuffle.init();
-        for(int i = 0; i< map.length; i++){
-            for(int j = 0; j < map[i].length; i++){
-                this.gameMap.getMapItem().add(new Pokemon(map[i][j]));
-            }
-        }
-        return this.gameMap;
-    }
+//    public GameMap initNewGame(){
+//        int[][] map = Shuffle.init();
+//        for(int i = 0; i< map.length; i++){
+//            for(int j = 0; j < map[i].length; i++){
+//                this.gameMap.getMapItem().add(new Pokemon(map[i][j]));
+//            }
+//        }
+//        return this.gameMap;
+//    }
 
 }
