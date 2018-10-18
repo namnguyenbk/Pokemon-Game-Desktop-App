@@ -1,11 +1,14 @@
 package algorithms;
 
+import java.util.Scanner;
+
 public class Matching {
     private static boolean checkLineX(int[][] map, int y1, int y2, int x) {
         if(y1 == y2) return true;
         int min = Math.min(y1, y2);
         int max = Math.max(y1, y2);
-        for (int y = min; y <= max; y++){
+        for (int y = min + 1; y <= max; y++){
+            if (y == max) return true;
             if(map[x][y] != 0){
                 return false;
             }
@@ -16,7 +19,8 @@ public class Matching {
         if(x1==x2) return  true;
         int min = Math.min(x1, x2);
         int max = Math.max(x1, x2);
-        for (int x = min; x <= max; x++){
+        for (int x = min + 1; x <= max; x++){
+            if (x==max) return true;
             if(map[x][y] != 0){
                 return false;
             }
@@ -115,7 +119,7 @@ public class Matching {
 
 
     // Y tuong: ket qua tra ve la toa do cua 2 diem tu do ve nen mot duong thang ma 2 diem da kiem tra se noi vuong goc vao duong thang do
-    private static int[][] checkTwoPoint(int[][] map, int x1, int y1, int x2, int y2) {
+    public static int[][] checkTwoPoint(int[][] map, int x1, int y1, int x2, int y2) {
         if (x1 == x2) {
             if(checkLineX(map,y1, y2, x1))
                 return new int[][]{{x1,y1},{x2,y2}};
@@ -147,5 +151,29 @@ public class Matching {
             return new int[][]{{t,y1},{t,y2}};
         }
         return new int[][]{};
+    }
+
+    public static void main(String[] args) {
+        int[][] map = Shuffle.init();
+        for (int i = 0; i < 11; i++) {
+            for (int j = 0; j < 18 ; j++) {
+                System.out.printf("%3d",map[i][j]);
+            }
+            System.out.println("\n");
+        }
+        System.out.println("Nhap toa do:");
+        Scanner scan = new Scanner(System.in);
+        int x1 = scan.nextInt();
+        int y1 = scan.nextInt();
+        int x2 = scan.nextInt();
+        int y2 = scan.nextInt();
+        System.out.println(map[x1][y1]);
+        System.out.println(map[x2][y2]);
+        System.out.println("Nam");
+        int[][] route = checkTwoPoint(map, x1, y1, x2, y2);
+        System.out.println(route[0][0]);
+        System.out.println(route[0][1]);
+        System.out.println(route[1][0]);
+        System.out.println(route[1][1]);
     }
 }
