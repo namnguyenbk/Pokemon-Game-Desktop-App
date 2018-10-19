@@ -4,10 +4,11 @@ import java.util.Scanner;
 
 public class Matching {
     private static boolean checkLineX(int[][] map, int y1, int y2, int x) {
-//        if(y1 == y2) return true;
+        if(y1 == y2) return true;
         int min = Math.min(y1, y2);
         int max = Math.max(y1, y2);
-        for (int y = min + 1; y < max; y++){
+        for (int y = min + 1; y <= max; y++){
+            if (y == max) return true;
             if(map[x][y] != 0){
                 return false;
             }
@@ -15,10 +16,11 @@ public class Matching {
         return true;
     }
     private static boolean checkLineY(int[][]map, int x1, int x2, int y) {
-       // if(x1==x2) return  true;
+        if(x1==x2) return  true;
         int min = Math.min(x1, x2);
         int max = Math.max(x1, x2);
-        for (int x = min + 1; x < max; x++){
+        for (int x = min + 1; x <= max; x++){
+            if (x==max) return true;
             if(map[x][y] != 0){
                 return false;
             }
@@ -27,7 +29,6 @@ public class Matching {
     }
 
     private static int checkRectX(int[][] map, int x1, int y1, int x2, int y2){
-        if(x1 == x2) return -1;
         int[] yMinPoint;
         int[] yMaxPoint;
         if (y1 > y2) {
@@ -46,7 +47,6 @@ public class Matching {
         return -1;
     }
     private static int checkRectY(int[][] map, int x1, int y1, int x2, int y2){
-        if (y1 == y2) return -1;
         int[] xMinPoint;
         int[] xMaxPoint;
         if (x1 > x2) {
@@ -171,10 +171,11 @@ public class Matching {
         int y2 = scan.nextInt();
         System.out.println(map[x1][y1]);
         System.out.println(map[x2][y2]);
+        System.out.println("Nam");
         int[][] route = checkTwoPoint(map, x1, y1, x2, y2);
         System.out.println(route[0][0]);
         System.out.println(route[0][1]);
         System.out.println(route[1][0]);
         System.out.println(route[1][1]);
-        }
+    }
 }
