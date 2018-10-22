@@ -6,8 +6,7 @@ public class Matching {
     private static boolean checkLineX(int[][] map, int y1, int y2, int x) {
         int min = Math.min(y1, y2);
         int max = Math.max(y1, y2);
-        for (int y = min + 1; y <= max; y++){
-            if (y == max) return true;
+        for (int y = min + 1; y < max; y++){
             if(map[x][y] != 0){
                 return false;
             }
@@ -17,8 +16,7 @@ public class Matching {
     private static boolean checkLineY(int[][]map, int x1, int x2, int y) {
         int min = Math.min(x1, x2);
         int max = Math.max(x1, x2);
-        for (int x = min + 1; x <= max; x++){
-            if (x==max) return true;
+        for (int x = min + 1; x < max; x++){
             if(map[x][y] != 0){
                 return false;
             }
@@ -37,12 +35,22 @@ public class Matching {
             yMaxPoint = new int[]{x2, y2};
             yMinPoint = new int[]{x1,y1};
         }
-        for (int y = yMinPoint[1] ; y <= yMaxPoint[1]; y++){
-            if (checkLineX(map, yMinPoint[1], y, yMinPoint[0])
+        int y = yMinPoint[1];
+        if (checkLineX(map, y, yMinPoint[1], yMinPoint[0])
+                && checkLineY(map, yMinPoint[0], yMaxPoint[0], y)
+                && checkLineX(map, yMaxPoint[1], y, yMaxPoint[0]))
+            return y;
+        y++;
+        for (; y < yMaxPoint[1]; y++){
+            if (map[x1][y]==0 && map[x2][y]==0 && checkLineX(map, yMinPoint[1], y, yMinPoint[0])
                     && checkLineY(map, yMinPoint[0], yMaxPoint[0], y)
                     && checkLineX(map, yMaxPoint[1], y, yMaxPoint[0]))
                 return y;
         }
+        if (checkLineX(map, y, yMinPoint[1], yMinPoint[0])
+                && checkLineY(map, yMinPoint[0], yMaxPoint[0], y)
+                && checkLineX(map, yMaxPoint[1], y, yMaxPoint[0]))
+            return y;
         return -1;
     }
     private static int checkRectY(int[][] map, int x1, int y1, int x2, int y2){
@@ -56,12 +64,22 @@ public class Matching {
             xMaxPoint = new int[]{x2, y2};
             xMinPoint = new int[]{x1,y1};
         }
-        for (int x = xMinPoint[0]; x <= xMaxPoint[0]; x++){
-            if (checkLineY(map, xMinPoint[0], x, xMinPoint[1])
+        int x = xMinPoint[0];
+        if (checkLineY(map, xMinPoint[0], x, xMinPoint[1])
+                && checkLineX(map, xMaxPoint[1], xMinPoint[1], x)
+                && checkLineY(map, xMaxPoint[0], x, xMaxPoint[1]))
+            return x;
+        x++;
+        for (; x < xMaxPoint[0]; x++){
+            if (map[x][y1]==0 && map[x][y2]==0&&checkLineY(map, xMinPoint[0], x, xMinPoint[1])
                     && checkLineX(map, xMaxPoint[1], xMinPoint[1], x)
                     && checkLineY(map, xMaxPoint[0], x, xMaxPoint[1]))
                 return x;
         }
+        if (checkLineY(map, xMinPoint[0], x, xMinPoint[1])
+                && checkLineX(map, xMaxPoint[1], xMinPoint[1], x)
+                && checkLineY(map, xMaxPoint[0], x, xMaxPoint[1]))
+            return x;
         return -1;
     }
     private static int checkMoreLineX(int[][] map, int x1, int y1, int x2, int y2, int step){
@@ -173,9 +191,12 @@ public class Matching {
         System.out.println(map[x2][y2]);
         System.out.println("Nam");
         int[][] route = checkTwoPoint(map, x1, y1, x2, y2);
-        System.out.println(route[0][0]);
-        System.out.println(route[0][1]);
-        System.out.println(route[1][0]);
-        System.out.println(route[1][1]);
+        if (route.length == 0) System.out.println("No move!");
+        else {
+            System.out.println(route[0][0]);
+            System.out.println(route[0][1]);
+            System.out.println(route[1][0]);
+            System.out.println(route[1][1]);
+        }
     }
 }
