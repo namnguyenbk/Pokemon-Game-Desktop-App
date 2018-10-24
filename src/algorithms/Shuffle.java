@@ -62,16 +62,16 @@ public class Shuffle {
     public static int[][] mergeByRow( int[][] map){
         int x1,x2,y1,y2;
         x1 = 0;
-        x2 = 8;
+        x2 = 10;
         y1 = 0;
-        y2 = 15;
+        y2 = 17;
         while(!(((x2 <= x1)&&(y2 <= y1))||((y2 >= y1) &&(x2 < x1)))){
             if((map[x2][y2] != 0)&&(map[x1][y1] != 0)){
                 swap(map,x1,y1,x2,y2);
                 y2 = y2 -1;
                 if(y2 < 0){
                     x2 = x2 -1;
-                    y2 = 15;
+                    y2 = 17;
                     if(x2 < 0){
                         break;
                     }
@@ -79,10 +79,10 @@ public class Shuffle {
 
 
                 y1 = y1 + 1;
-                if(y1 > 15){
+                if(y1 > 17){
                     x1 = x1 + 1;
                     y1 = 0;
-                    if(x1 > 8){
+                    if(x1 > 10){
                         break;
                     }
                 }
@@ -94,7 +94,7 @@ public class Shuffle {
                     y2 = y2 -1;
                     if(y2 < 0){
                         x2 = x2 -1;
-                        y2 = 15;
+                        y2 = 17;
                         if(x2 < 0){
                             break;
                         }
@@ -104,10 +104,10 @@ public class Shuffle {
 
                     if(map[x1][y1] == 0){
                         y1 = y1 + 1;
-                        if(y1 > 15){
+                        if(y1 > 17){
                             x1 = x1 + 1;
                             y1 = 0;
-                            if(x1 > 8){
+                            if(x1 > 10){
                                 break;
                             }
                         }
@@ -121,25 +121,25 @@ public class Shuffle {
     public static int[][] mergeByCol(int[][] map){
         int x1,x2,y1,y2;
         x1 = 0;
-        x2 = 8;
+        x2 = 10;
         y1 = 0;
-        y2 = 15;
+        y2 = 17;
         while(!((x2 <= x1)&& (y2 <= y1))||((x2 >= x1)&&(y2 < y1))){
             if((map[x2][y2] != 0)&&(map[x1][y1] != 0)){
                 swap(map,x1,y1,x2,y2);
                 x2 = x2 -1;
                 if(x2 < 0){
                     y2 = y2 - 1;
-                    x2 = 15;
+                    x2 = 17;
                     if(y2 < 0){
                         break;
                     }
                 }
                 x1 = x1 + 1;
-                if(x1 > 8){
+                if(x1 > 10){
                     y1 = y1 + 1;
                     x1 = 0;
-                    if(y1 > 15){
+                    if(y1 > 17){
                         break;
                     }
                 }
@@ -148,7 +148,7 @@ public class Shuffle {
                     x2 = x2 -1;
                     if(x2 < 0){
                         y2 = y2 - 1;
-                        x2 = 15;
+                        x2 = 17;
                         if(y2 < 0){
                             break;
                         }
@@ -156,10 +156,10 @@ public class Shuffle {
                 }
                 if(map[x1][y1] == 0){
                     x1 = x1 + 1;
-                    if(x1 > 8){
+                    if(x1 > 10){
                         y1 = y1 + 1;
                         x1 = 0;
-                        if(y1 > 15){
+                        if(y1 > 17){
                             break;
                         }
                     }
