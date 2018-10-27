@@ -37,6 +37,7 @@ public class Matching {
         }
         int y = yMinPoint[1];
         if (checkLineX(map, y, yMinPoint[1], yMinPoint[0])
+                && map[yMaxPoint[0]][y] == 0
                 && checkLineY(map, yMinPoint[0], yMaxPoint[0], y)
                 && checkLineX(map, yMaxPoint[1], y, yMaxPoint[0]))
             return y;
@@ -48,6 +49,7 @@ public class Matching {
                 return y;
         }
         if (checkLineX(map, y, yMinPoint[1], yMinPoint[0])
+                && map[yMinPoint[0]][y] == 0
                 && checkLineY(map, yMinPoint[0], yMaxPoint[0], y)
                 && checkLineX(map, yMaxPoint[1], y, yMaxPoint[0]))
             return y;
@@ -66,6 +68,7 @@ public class Matching {
         }
         int x = xMinPoint[0];
         if (checkLineY(map, xMinPoint[0], x, xMinPoint[1])
+                && map[x][xMaxPoint[1]] == 0
                 && checkLineX(map, xMaxPoint[1], xMinPoint[1], x)
                 && checkLineY(map, xMaxPoint[0], x, xMaxPoint[1]))
             return x;
@@ -77,6 +80,7 @@ public class Matching {
                 return x;
         }
         if (checkLineY(map, xMinPoint[0], x, xMinPoint[1])
+                && map[x][xMinPoint[1]] == 0
                 && checkLineX(map, xMaxPoint[1], xMinPoint[1], x)
                 && checkLineY(map, xMaxPoint[0], x, xMaxPoint[1]))
             return x;
@@ -98,7 +102,7 @@ public class Matching {
             y = yMinPoint[1];
             row = yMaxPoint[0];
         }
-        if (checkLineX(map,yMaxPoint[1],yMinPoint[1],row)){
+        if (map[row][y] == 0 && checkLineX(map,yMaxPoint[1],yMinPoint[1],row)){
             y += step;
             while (map[yMinPoint[0]][y] == 0 && map[yMaxPoint[0]][y] == 0){
                 if (checkLineY(map, yMaxPoint[0], yMinPoint[0], y)){
@@ -125,7 +129,7 @@ public class Matching {
             x = xMinPoint[0];
             col = xMaxPoint[1];
         }
-        if (checkLineX(map,xMaxPoint[0],xMinPoint[0],col)){
+        if (map[x][col] == 0 && checkLineX(map,xMaxPoint[0],xMinPoint[0],col)){
             x += step;
             while (map[x][xMaxPoint[1]] == 0 && map[x][xMinPoint[1]] == 0){
                 if (checkLineX(map, xMaxPoint[1], xMinPoint[1], x)){
@@ -140,6 +144,8 @@ public class Matching {
 
     // Y tuong: ket qua tra ve la toa do cua 2 diem tu do ve nen mot duong thang ma 2 diem da kiem tra se noi vuong goc vao duong thang do
     public static int[][] checkTwoPoint(int[][] map, int x1, int y1, int x2, int y2) {
+        if((x1 == x2 && y1 == y2) || (map[x1][y1] != map[x2][y2]))
+            return new int[][]{};
         if (x1 == x2) {
             if(checkLineX(map,y1, y2, x1))
                 return new int[][]{{x1,y1},{x2,y2}};
@@ -174,29 +180,29 @@ public class Matching {
     }
 
     public static void main(String[] args) {
-        int[][] map = Shuffle.init();
+        int[][] map = Shuffle.initMapdefault();
         for (int i = 0; i < 11; i++) {
             for (int j = 0; j < 18 ; j++) {
                 System.out.printf("%3d",map[i][j]);
             }
             System.out.println("\n");
         }
-        System.out.println("Nhap toa do:");
         Scanner scan = new Scanner(System.in);
-        int x1 = scan.nextInt();
-        int y1 = scan.nextInt();
-        int x2 = scan.nextInt();
-        int y2 = scan.nextInt();
-        System.out.println(map[x1][y1]);
-        System.out.println(map[x2][y2]);
-        System.out.println("Nam");
-        int[][] route = checkTwoPoint(map, x1, y1, x2, y2);
-        if (route.length == 0) System.out.println("No move!");
-        else {
-            System.out.println(route[0][0]);
-            System.out.println(route[0][1]);
-            System.out.println(route[1][0]);
-            System.out.println(route[1][1]);
+        while(true) {
+            System.out.println("Nhap toa do:");
+
+            int x1 = scan.nextInt();
+            int y1 = scan.nextInt();
+            int x2 = scan.nextInt();
+            int y2 = scan.nextInt();
+            int[][] route = checkTwoPoint(map, x1, y1, x2, y2);
+            if (route.length == 0) System.out.println("No move!");
+            else {
+                System.out.println(route[0][0]);
+                System.out.println(route[0][1]);
+                System.out.println(route[1][0]);
+                System.out.println(route[1][1]);
+            }
         }
     }
 }
