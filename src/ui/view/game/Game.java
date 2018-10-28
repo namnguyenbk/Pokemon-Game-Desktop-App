@@ -52,16 +52,17 @@ public class Game extends Application {
     public static Stage getMainStage(){
         return mainStage;
     }
-    public static Scene getStartScene(){
+    public  Scene getStartScene(){
         return startScene;
     }
-    public static PlayGameScene getPlayStage(){
+    public  PlayGameScene getPlayStage(){
         return playGameScene;
     }
-    public static void setPlayScene( PlayGameScene playScene){
+    public  void setPlayScene( PlayGameScene playScene){
         playGameScene = playScene;
     }
     public static void init(String[] args) {
         launch(args);
     }
+
 }

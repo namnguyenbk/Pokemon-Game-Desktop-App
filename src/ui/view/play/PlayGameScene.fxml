@@ -22,6 +22,11 @@
                      <font>
                         <Font name="Chalkboard Bold" size="22.0" />
                      </font></Button>
+                  <TextField layoutX="867.0" layoutY="25.0" prefHeight="27.0" prefWidth="76.0" style="-fx-background-color: black;">
+                     <font>
+                        <Font name="Chalkboard Bold" size="16.0" />
+                     </font>
+                  </TextField>
                     </children>
                 </AnchorPane>
             </children>

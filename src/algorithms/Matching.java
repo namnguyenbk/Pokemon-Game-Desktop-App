@@ -3,7 +3,7 @@ package algorithms;
 import java.util.Scanner;
 
 public class Matching {
-    private static boolean checkLineX(int[][] map, int y1, int y2, int x) {
+    private static final boolean checkLineX(int[][] map, int y1, int y2, int x) {
         int min = Math.min(y1, y2);
         int max = Math.max(y1, y2);
         for (int y = min + 1; y < max; y++){
@@ -13,7 +13,7 @@ public class Matching {
         }
         return true;
     }
-    private static boolean checkLineY(int[][]map, int x1, int x2, int y) {
+    private static final boolean checkLineY(int[][]map, int x1, int x2, int y) {
         int min = Math.min(x1, x2);
         int max = Math.max(x1, x2);
         for (int x = min + 1; x < max; x++){
@@ -24,7 +24,7 @@ public class Matching {
         return true;
     }
 
-    private static int checkRectX(int[][] map, int x1, int y1, int x2, int y2){
+    private static final int checkRectX(int[][] map, int x1, int y1, int x2, int y2){
         if (x1== x2) return -1;
         int[] yMinPoint;
         int[] yMaxPoint;
@@ -55,7 +55,7 @@ public class Matching {
             return y;
         return -1;
     }
-    private static int checkRectY(int[][] map, int x1, int y1, int x2, int y2){
+    private static final int checkRectY(int[][] map, int x1, int y1, int x2, int y2){
         if(y1==y2) return -1;
         int[] xMinPoint;
         int[] xMaxPoint;
@@ -86,7 +86,7 @@ public class Matching {
             return x;
         return -1;
     }
-    private static int checkMoreLineX(int[][] map, int x1, int y1, int x2, int y2, int step){
+    private static final int checkMoreLineX(int[][] map, int x1, int y1, int x2, int y2, int step){
         int[] yMinPoint;
         int[] yMaxPoint;
         if (y1 > y2) {
@@ -113,7 +113,7 @@ public class Matching {
         }
         return -1;
     }
-    private static int checkMoreLineY(int[][] map, int x1, int y1, int x2, int y2, int step){
+    private static final int checkMoreLineY(int[][] map, int x1, int y1, int x2, int y2, int step){
         int[] xMinPoint;
         int[] xMaxPoint;
         if (x1 > x2) {
@@ -143,9 +143,9 @@ public class Matching {
 
 
     // Y tuong: ket qua tra ve la toa do cua 2 diem tu do ve nen mot duong thang ma 2 diem da kiem tra se noi vuong goc vao duong thang do
-    public static int[][] checkTwoPoint(int[][] map, int x1, int y1, int x2, int y2) {
-        if((x1 == x2 && y1 == y2) || (map[x1][y1] != map[x2][y2]))
-            return new int[][]{};
+    public static final int[][] checkTwoPoint(int[][] map, int x1, int y1, int x2, int y2) {
+        if (map[x1][y1] != map[x2][y2]) return new int[][]{};
+        if (x1==x2 && y1==y2) return new int[][]{};
         if (x1 == x2) {
             if(checkLineX(map,y1, y2, x1))
                 return new int[][]{{x1,y1},{x2,y2}};

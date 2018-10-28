@@ -26,7 +26,6 @@ public class Pokemon {
         return name;
     }
 
-
     public boolean isCompatibleWith(Pokemon otherPokemon){
         return this.getName() == otherPokemon.getName();
     }

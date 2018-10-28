@@ -1,6 +1,7 @@
 package models;
 
 import algorithms.Shuffle;
+import main.Main;
 
 import java.util.ArrayList;
 
@@ -59,7 +60,7 @@ public class GameMap {
     }
     // Map default
     public GameMap(){
-        this.mapPokemon = setMapPokemon( Shuffle.init());
+        this.mapPokemon = setMapPokemon(Main.map);
         this.height = 9;
         this.width = 16;
         this.level = 0;

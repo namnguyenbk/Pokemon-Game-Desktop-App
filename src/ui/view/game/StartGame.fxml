@@ -64,9 +64,6 @@
                   <URL value="@../style.css" />
                   <URL value="@../jfoenix-design.css" />
                </stylesheets>
-               <effect>
-                  <Bloom threshold="0.62" />
-               </effect>
             </Button>
             <Button id="new-game-btn" fx:id="newGameBtn" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#setNewGame" prefHeight="50.0" prefWidth="170.0" text="New Game">
                <cursor>
@@ -83,9 +80,6 @@
                <font>
                   <Font name="Chalkboard Bold" size="17.0" />
                </font>
-               <effect>
-                  <Bloom threshold="0.7" />
-               </effect>
             </Button>
             <Button id="guide-btn" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#newGame" prefHeight="50.0" prefWidth="170.0" text="Guide">
                <cursor>
@@ -102,9 +96,6 @@
                <font>
                   <Font name="Chalkboard Bold" size="17.0" />
                </font>
-               <effect>
-                  <Bloom threshold="0.66" />
-               </effect>
             </Button>
             <Button id="quit-btn" fx:id="quitGameBtn" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#quitGame" prefHeight="50.0" prefWidth="170.0" text="Quit">
                <cursor>
@@ -121,9 +112,6 @@
                <font>
                   <Font name="Chalkboard Bold" size="17.0" />
                </font>
-               <effect>
-                  <Bloom threshold="0.67" />
-               </effect>
             </Button>
          </children>
          <opaqueInsets>
