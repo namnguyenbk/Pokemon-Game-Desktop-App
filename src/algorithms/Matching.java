@@ -102,7 +102,7 @@ public class Matching {
             y = yMinPoint[1];
             row = yMaxPoint[0];
         }
-        if (map[row][y] == 0 && checkLineX(map,yMaxPoint[1],yMinPoint[1],row)){
+        if ((map[row][y] == 0 || y1 == y2) && checkLineX(map,yMaxPoint[1],yMinPoint[1],row)){
             y += step;
             while (map[yMinPoint[0]][y] == 0 && map[yMaxPoint[0]][y] == 0){
                 if (checkLineY(map, yMaxPoint[0], yMinPoint[0], y)){
@@ -129,7 +129,7 @@ public class Matching {
             x = xMinPoint[0];
             col = xMaxPoint[1];
         }
-        if (map[x][col] == 0 && checkLineX(map,xMaxPoint[0],xMinPoint[0],col)){
+        if ((map[x][col] == 0 || x1==x2) && checkLineX(map,xMaxPoint[0],xMinPoint[0],col)){
             x += step;
             while (map[x][xMaxPoint[1]] == 0 && map[x][xMinPoint[1]] == 0){
                 if (checkLineX(map, xMaxPoint[1], xMinPoint[1], x)){
