@@ -16,8 +16,9 @@ import static ui.controller.PlayGameController.borderPanePlayGame;
 
 
 public class PlayGameScene {
-    public static GridPokemon gridPokemon;
-    public static Scene playGameScene;
+    public  GridPokemon gridPokemon;
+    public  Scene playGameScene;
+
     private Scene initBorderPanePlayGame(Parent root, Scene playGameScene, GridPokemon gridPokemon){
         borderPanePlayGame = (BorderPane) root.lookup("#borderPanePlayGame");
         borderPanePlayGame.setMaxSize(1000, 750);
@@ -26,14 +27,19 @@ public class PlayGameScene {
         playGameScene = new Scene(borderPanePlayGame,1005, 755);
         return playGameScene;
     }
-    private void gotoPlayGameScene(){
-    }
+
     private void addToolbar( Parent root){
         Utility.setIconButton(root, "#scoreView", "src/resource/image/scores.png",30.0, 30.0);
         Utility.setIconButton(root, "#shuffleBtn", "src/resource/image/replay.png",30.0, 30.0);
         Utility.setIconButton(root, "#mediaBtn", "src/resource/image/sound.png",30.0, 30.0);
         Utility.setIconButton(root, "#saveGameBtn", "src/resource/image/save.png",30.0, 30.0);
         Utility.setIconButton(root, "#backToGamebtn", "src/resource/image/quit.png",30.0, 30.0);
+    }
+
+    public void updateCenterPanePlayGame(){
+        gridPokemon.updateGrid();
+        borderPanePlayGame.setCenter(gridPokemon.getGrid());
+
     }
 
     public PlayGameScene(){

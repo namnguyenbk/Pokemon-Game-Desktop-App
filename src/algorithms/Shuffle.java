@@ -1,5 +1,7 @@
 package algorithms;
 
+import main.Main;
+
 import java.util.Random;
 
 public class Shuffle {
@@ -17,17 +19,17 @@ public class Shuffle {
 //            }
 //        }
 
-        mapDefault[0] = new int[]{0,0,0,0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-        mapDefault[1] = new int[]{0,1, 5, 2, 7, 2, 3, 8, 4, 1, 5, 10, 14, 19, 23, 28, 32,0};
-        mapDefault[2] = new int[]{0,5, 1, 6, 6, 3, 7, 4, 8, 1, 6, 10, 15, 29, 24, 28, 33, 0};
-        mapDefault[3] = new int[]{0,9, 10, 9, 10, 11, 15, 12, 12, 2, 6, 11, 16, 20, 24, 19, 34, 0};
-        mapDefault[4] = new int[]{0,13, 13, 14, 14, 15, 11, 16, 16, 2, 7, 12, 16, 20, 25, 29, 33, 0};
-        mapDefault[5] = new int[]{0,17, 21, 18, 19, 18, 23, 3, 20, 3, 20, 12, 15, 21, 21, 30, 34, 0};
-        mapDefault[6] = new int[]{0,21, 17, 22, 22, 27, 19, 24, 24, 7, 8, 11, 17, 25, 26, 30, 31, 0};
-        mapDefault[7] = new int[]{0,25, 30, 26, 4, 23, 27, 28, 28, 26, 35, 17, 13, 22, 26, 8, 35, 0};
-        mapDefault[8] = new int[]{0,29, 33, 30, 34, 31, 35, 32, 32, 4, 9, 13, 18, 22, 27, 31, 32, 0};
-        mapDefault[9] = new int[]{0,33, 29, 25, 34, 35, 31, 36, 36, 5, 9, 14, 18, 23, 27, 36, 36, 0};
-        mapDefault[10] = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+        mapDefault[0] = new int[]{0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0};
+        mapDefault[1] = new int[]{0,  1,  5,  2,  7,  2,  3,  8,  4,  1,  5,  10, 14, 19, 23, 28, 32, 0};
+        mapDefault[2] = new int[]{0,  5,  1,  6,  6,  3,  7,  4,  8,  1,  6,  10, 15, 29, 24, 28, 33, 0};
+        mapDefault[3] = new int[]{0,  9,  10, 9,  10, 11, 15, 12, 12, 2,  6,  11, 16, 20, 24, 19, 34, 0};
+        mapDefault[4] = new int[]{0,  13, 13, 14, 14, 15, 11, 16, 16, 2,  7,  12, 16, 20, 25, 29, 33, 0};
+        mapDefault[5] = new int[]{0,  17, 21, 18, 19, 18, 23, 3,  20, 3,  20, 12, 15, 21, 21, 30, 34, 0};
+        mapDefault[6] = new int[]{0,  21, 17, 22, 22, 27, 19, 24, 24, 7,  8,  11, 17, 25, 26, 30, 31, 0};
+        mapDefault[7] = new int[]{0,  25, 30, 26, 4,  23, 27, 28, 28, 26, 35, 17, 13, 22, 26, 8,  35, 0};
+        mapDefault[8] = new int[]{0,  29, 33, 30, 34, 31, 35, 32, 32, 4,  9,  13, 18, 22, 27, 31, 32, 0};
+        mapDefault[9] = new int[]{0,  33, 29, 25, 34, 35, 31, 36, 36, 5,  9,  14, 18, 23, 27, 36, 36, 0};
+        mapDefault[10]= new int[]{0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0};
 
 //        mapDefault[0]  = new int[]{0 ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0,  0  ,0  ,0  ,0  ,0};
 //        mapDefault[1]  = new int[]{0 ,1  ,0  ,0  ,7  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,8,  19 ,23 ,28 ,32 ,0};
@@ -59,7 +61,7 @@ public class Shuffle {
         return map;
     }
 
-    public static final int[][] mergeByRow( int[][] map){
+    public static final int[][] shuffleByRow( int[][] map){
         int x1,x2,y1,y2;
         x1 = 0;
         x2 = 10;
@@ -118,7 +120,7 @@ public class Shuffle {
         return map;
     }
 
-    public static final int[][] mergeByCol(int[][] map){
+    public static final int[][] shuffleByCol(int[][] map){
         int x1,x2,y1,y2;
         x1 = 0;
         x2 = 10;
@@ -191,13 +193,63 @@ public class Shuffle {
         return listItem;
     }
 
-    public static final int[][] updateMapLv2( int[][] map, int x1, int y1, int x2, int y2 ){
+    public static final int[][] changeStateMapLV2( int[][] map, int row1, int col1, int row2, int col2){
+        int start1 = row1;
+        int start2 = row2;
+        if ( col1 != col2){
+            for (int i = start1; i > 1; i--) {
+                swap(map, i, col1, i -1, col1);
+            }
+            for (int i = start2; i > 1 ; i--) {
+                swap(map, i, col2, i-1, col2);
+            }
+        }
+
+        else {
+            start1  = row1 < row2? row1 : row2;
+            for (int i = start1; i > 1; i--) {
+                swap(map, i, col1, i -1, col1);
+            }
+            start2 = row1 < row2? row2 : row1;
+            for (int i = start2; i > 1; i--) {
+                swap(map, i, col1, i -1, col1);
+            }
+
+        }
+        return map;
+    }
+
+    public static final int[][] changeStateMapLV3( int[][] map, int row1, int col1, int row2, int col2){
+        int start1 = col1;
+        int start2 = col2;
+        if ( row1 != row2){
+            for (int i = start1; i > 1; i--) {
+                swap(map, row1, i, row1, i-1);
+            }
+            for (int j = start2; j > 1 ; j--) {
+                swap(map, row2, j, row2, j-1);
+            }
+        }else {
+            start1 = col1 > col2? col2 : col1;
+            for (int i = start1; i > 1 ; i--) {
+                swap(map, row1, i, row1, i -1);
+            }
+            start2 = col1 > col2? col1 : col2;
+            for (int i = start2; i > 1 ; i--) {
+                swap(map, row1, i, row1, i -1);
+            }
+        }
 
         return map;
     }
+    public static final int[][] updateCurrentMap( int[][] map ){
+        map = shuffleByCol(map);
+        map = shuffleByRow(map);
+        return map;
+    }
     public static final int[][] init() {
-        initMapdefault();
-        return shuffleMapDefault(mapDefault);
+        return initMapdefault();
+//        return shuffleMapDefault(mapDefault);
     }
 //    public static void main(String[] args) {
 //        initMapdefault();

@@ -12,21 +12,21 @@
     <top>
         <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
             <children>
-                <AnchorPane prefHeight="21.0" prefWidth="950.0">
+                <AnchorPane id="score" prefHeight="21.0" prefWidth="950.0">
                     <children>
                         <ProgressBar fx:id="timeLife" layoutX="212.0" layoutY="22.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="32.0" prefWidth="645.0" progress="1.0" style="-fx-border-color: black; -fx-background-color: red;" stylesheets="@../style.css" AnchorPane.leftAnchor="212.0" AnchorPane.rightAnchor="93.0" AnchorPane.topAnchor="22.0" />
-                        <Button fx:id="scoreView" layoutX="83.0" layoutY="25.0" mnemonicParsing="false" style="-fx-background-color: black;" text="0" textFill="WHITE">
+                        <Button id="scoreView" fx:id="scoreView" layoutX="83.0" layoutY="25.0" mnemonicParsing="false" style="-fx-background-color: black;" text="0" textFill="WHITE">
                      <cursor>
                         <Cursor fx:constant="DEFAULT" />
                      </cursor>
                      <font>
                         <Font name="Chalkboard Bold" size="22.0" />
                      </font></Button>
-                  <TextField layoutX="867.0" layoutY="25.0" prefHeight="27.0" prefWidth="76.0" style="-fx-background-color: black;">
+                  <Text id="level" fill="WHITE" layoutX="889.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0">
                      <font>
-                        <Font name="Chalkboard Bold" size="16.0" />
+                        <Font name="Chalkboard" size="21.0" />
                      </font>
-                  </TextField>
+                  </Text>
                     </children>
                 </AnchorPane>
             </children>
@@ -35,7 +35,7 @@
     <bottom>
         <HBox prefHeight="77.0" prefWidth="950.0" spacing="40.0" BorderPane.alignment="CENTER">
             <children>
-                <Button fx:id="shuffleBtn" alignment="CENTER" mnemonicParsing="false" style="-fx-background-color: black;">
+                <Button fx:id="shuffleBtn" alignment="CENTER" mnemonicParsing="false" onAction="#shuffleMap" style="-fx-background-color: black;">
                     <HBox.margin>
                         <Insets left="280.0" />
                     </HBox.margin>
@@ -43,7 +43,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
                 </Button>
-                <Button fx:id="mediaBtn" mnemonicParsing="false" style="-fx-background-color: black;">
+                <Button fx:id="mediaBtn" mnemonicParsing="false" onAction="#toggleSound" style="-fx-background-color: black;">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Button>
@@ -51,7 +51,7 @@
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Button>
-                <Button fx:id="backToGamebtn" contentDisplay="RIGHT" mnemonicParsing="false" style="-fx-background-color: black;">
+                <Button fx:id="backToGamebtn" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#quitGame" style="-fx-background-color: black;">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Button>

@@ -13,9 +13,10 @@ import ui.utility.Utility;
 
 import java.util.ArrayList;
 
+import static ui.controller.PlayGameController.lastPlay;
+
 public class GridPokemon {
     private GridPane grid;
-    private GameMap gameMap;
 
     public GridPane createGridButtonPokemon( ArrayList<Pokemon> map1){
         GridPane gridPokemon = new GridPane();
@@ -29,19 +30,25 @@ public class GridPokemon {
                 int layoutX = r + 1;
                 int layoutY = c +1 ;
                 Button button = new Button();
-                button = Utility.setIconButton(button,preUrl + map1.get(index).getId() + ".png", 50.0, 50.0 );
-                button.setPadding(new Insets(2,2,2,2));
-                button.getStyleClass().add("btnPokemon");
-                button.setOnAction(new EventHandler<ActionEvent>() {
-                    int id = map1.get(index).getId();
-                    int x = layoutX;
-                    int y = layoutY;
-                    @Override
-                    public void handle(ActionEvent event) {
-                        PlayGameController.addToCheck((Button) event.getSource(), id, x, y);
+                int id = map1.get(index).getId();
+                    if ( id != 0) {
+                        button = Utility.setIconButton(button,preUrl + id + ".png", 50.0, 50.0 );
+                    }else {
+                        button = Utility.setIconButton(button,preUrl + "1" + ".png", 50.0, 50.0 );
+                        button.setVisible(false);
                     }
-                });
-                gridPokemon.add(button, c, r);
+                    button.setPadding(new Insets(2,2,2,2));
+                    button.getStyleClass().add("btnPokemon");
+                    button.setOnAction(new EventHandler<ActionEvent>() {
+                        int id = map1.get(index).getId();
+                        int x = layoutX;
+                        int y = layoutY;
+                        @Override
+                        public void handle(ActionEvent event) {
+                            PlayGameController.addToCheck((Button) event.getSource(), id, x, y);
+                        }
+                    });
+                    gridPokemon.add(button, c, r);
             }
         }
         System.gc();
@@ -56,12 +63,16 @@ public class GridPokemon {
         return  this.grid;
     }
 
-    public GameMap getGameMap(){
-        return this.gameMap;
+//    public GameMap getGameMap(){
+//        return this.gameMap;
+//    }
+
+    public void updateGrid(){
+        this.grid = createGridButtonPokemon(lastPlay.getGameMap().getMap());
     }
 
+
     public GridPokemon(){
-         this.gameMap = new GameMap();
-        this.grid = createGridButtonPokemon( gameMap.getMap() );
+        this.grid = createGridButtonPokemon(lastPlay.getGameMap().getMap());
     }
 }
