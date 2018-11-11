@@ -3,9 +3,16 @@ package algorithms;
 import java.util.Scanner;
 
 public class Matching {
-    private static final boolean checkLineX(int[][] map, int y1, int y2, int x) {
-        int min = Math.min(y1, y2);
-        int max = Math.max(y1, y2);
+    public static int[][] maxX(int x1, int y1, int x2, int y2) {
+        return x1 > x2 ? new int[][]{{x1,y1},{x2,y2}} : new int[][]{{x2,y2},{x1,y1}};
+    }
+    public static int[][] maxY(int x1, int y1, int x2, int y2) {
+        return y1 > y2 ? new int[][]{{x1,y1},{x2,y2}} : new int[][]{{x2,y2},{x1,y1}};
+    }
+    public static final boolean checkLineX(int[][] map, int y1, int y2, int x) {
+        int[][] maxCol = maxY(x,y1,x,y2);
+        int min = maxCol[1][1];
+        int max = maxCol[0][1];
         for (int y = min + 1; y < max; y++){
             if(map[x][y] != 0){
                 return false;
@@ -13,9 +20,10 @@ public class Matching {
         }
         return true;
     }
-    private static final boolean checkLineY(int[][]map, int x1, int x2, int y) {
-        int min = Math.min(x1, x2);
-        int max = Math.max(x1, x2);
+    public static final boolean checkLineY(int[][]map, int x1, int x2, int y) {
+        int[][] minRow = maxX(x1,y,x2,y);
+        int min = minRow[1][0];
+        int max = minRow[0][0];
         for (int x = min + 1; x < max; x++){
             if(map[x][y] != 0){
                 return false;
@@ -24,118 +32,76 @@ public class Matching {
         return true;
     }
 
-    private static final int checkRectX(int[][] map, int x1, int y1, int x2, int y2){
-        if (x1== x2) return -1;
-        int[] yMinPoint;
-        int[] yMaxPoint;
-        if (y1 > y2) {
-            yMaxPoint = new int[]{x1, y1};
-            yMinPoint = new int[]{x2,y2};
-        } else {
-            yMaxPoint = new int[]{x2, y2};
-            yMinPoint = new int[]{x1,y1};
+    public static final int checkRectX(int[][] map, int x1, int y1, int x2, int y2){
+        int[][] maxCol = maxY(x1,y1,x2,y2);
+        int[] yMinPoint = maxCol[1];
+        int[] yMaxPoint = maxCol[0];
+        for (int y = yMinPoint[1] + 1; y < yMaxPoint[1]; y++){
+            if (map[x1][y]==0 && map[x2][y]==0){ // 3 duong thang tao thanh chu Z duoc tao tu 4 diem: hai diem can kiem tra va 2 diem bang 0
+                if (checkLineX(map, yMinPoint[1], y, yMinPoint[0]) // duong thang noi tu 1 diem den 1 diem bang 0
+                        && checkLineY(map, yMinPoint[0], yMaxPoint[0], y) // duong thang noi hai diem bang 0
+                        && checkLineX(map, yMaxPoint[1], y, yMaxPoint[0])) // duong thang noi diem con lai va diem bang 0 con lai
+                    return y;
+            }
+
         }
-        int y = yMinPoint[1];
-        if (checkLineX(map, y, yMinPoint[1], yMinPoint[0])
-                && map[yMaxPoint[0]][y] == 0
-                && checkLineY(map, yMinPoint[0], yMaxPoint[0], y)
-                && checkLineX(map, yMaxPoint[1], y, yMaxPoint[0]))
-            return y;
-        y++;
-        for (; y < yMaxPoint[1]; y++){
-            if (map[x1][y]==0 && map[x2][y]==0 && checkLineX(map, yMinPoint[1], y, yMinPoint[0])
-                    && checkLineY(map, yMinPoint[0], yMaxPoint[0], y)
-                    && checkLineX(map, yMaxPoint[1], y, yMaxPoint[0]))
-                return y;
-        }
-        if (checkLineX(map, y, yMinPoint[1], yMinPoint[0])
-                && map[yMinPoint[0]][y] == 0
-                && checkLineY(map, yMinPoint[0], yMaxPoint[0], y)
-                && checkLineX(map, yMaxPoint[1], y, yMaxPoint[0]))
-            return y;
         return -1;
     }
-    private static final int checkRectY(int[][] map, int x1, int y1, int x2, int y2){
-        if(y1==y2) return -1;
-        int[] xMinPoint;
-        int[] xMaxPoint;
-        if (x1 > x2) {
-            xMaxPoint = new int[]{x1, y1};
-            xMinPoint = new int[]{x2,y2};
-        } else {
-            xMaxPoint = new int[]{x2, y2};
-            xMinPoint = new int[]{x1,y1};
-        }
-        int x = xMinPoint[0];
-        if (checkLineY(map, xMinPoint[0], x, xMinPoint[1])
-                && map[x][xMaxPoint[1]] == 0
-                && checkLineX(map, xMaxPoint[1], xMinPoint[1], x)
-                && checkLineY(map, xMaxPoint[0], x, xMaxPoint[1]))
-            return x;
-        x++;
-        for (; x < xMaxPoint[0]; x++){
-            if (map[x][y1]==0 && map[x][y2]==0&&checkLineY(map, xMinPoint[0], x, xMinPoint[1])
-                    && checkLineX(map, xMaxPoint[1], xMinPoint[1], x)
-                    && checkLineY(map, xMaxPoint[0], x, xMaxPoint[1]))
+    public static final int checkRectY(int[][] map, int x1, int y1, int x2, int y2){
+        int[][] maxRow = maxX(x1,y1,x2,y2);
+        int[] xMinPoint = maxRow[1];
+        int[] xMaxPoint = maxRow[0];
+        for (int x = xMinPoint[0] + 1; x < xMaxPoint[0]; x++){
+            if (map[x][y1]==0 && map[x][y2]==0){
+                if (checkLineY(map, xMinPoint[0], x, xMinPoint[1])
+                        && checkLineX(map, xMaxPoint[1], xMinPoint[1], x)
+                        && checkLineY(map, xMaxPoint[0], x, xMaxPoint[1]))
                 return x;
+            }
+
         }
-        if (checkLineY(map, xMinPoint[0], x, xMinPoint[1])
-                && map[x][xMinPoint[1]] == 0
-                && checkLineX(map, xMaxPoint[1], xMinPoint[1], x)
-                && checkLineY(map, xMaxPoint[0], x, xMaxPoint[1]))
-            return x;
         return -1;
     }
-    private static final int checkMoreLineX(int[][] map, int x1, int y1, int x2, int y2, int step){
-        int[] yMinPoint;
-        int[] yMaxPoint;
-        if (y1 > y2) {
-            yMaxPoint = new int[]{x1, y1};
-            yMinPoint = new int[]{x2,y2};
-        } else {
-            yMaxPoint = new int[]{x2, y2};
-            yMinPoint = new int[]{x1,y1};
-        }
+     public static int checkMoreLineX(int[][] map, int x1, int y1, int x2, int y2, int step){
+         int[][] maxCol = maxY(x1,y1,x2,y2);
+         int[] yMinPoint = maxCol[1];
+         int[] yMaxPoint = maxCol[0];
         int y = yMaxPoint[1];
         int row = yMinPoint[0];
         if (step == -1){
             y = yMinPoint[1];
             row = yMaxPoint[0];
         }
-        if ((map[row][y] == 0 || y1 == y2) && checkLineX(map,yMaxPoint[1],yMinPoint[1],row)){
-            y += step;
-            while (map[yMinPoint[0]][y] == 0 && map[yMaxPoint[0]][y] == 0){
-                if (checkLineY(map, yMaxPoint[0], yMinPoint[0], y)){
-                    return y;
-                }
-                y += step;
+        if (map[row][y] == 0 || y1 == y2) {
+            if (checkLineX(map, yMaxPoint[1], yMinPoint[1], row)) {
+                do {
+                    if (checkLineY(map, yMaxPoint[0], yMinPoint[0], y)) {
+                        return y;
+                    }
+                    y += step;
+                } while (map[yMinPoint[0]][y] == 0 && map[yMaxPoint[0]][y] == 0);
             }
         }
         return -1;
     }
-    private static final int checkMoreLineY(int[][] map, int x1, int y1, int x2, int y2, int step){
-        int[] xMinPoint;
-        int[] xMaxPoint;
-        if (x1 > x2) {
-            xMaxPoint = new int[]{x1, y1};
-            xMinPoint = new int[]{x2,y2};
-        } else {
-            xMaxPoint = new int[]{x2, y2};
-            xMinPoint = new int[]{x1,y1};
-        }
+    public static final int checkMoreLineY(int[][] map, int x1, int y1, int x2, int y2, int step){
+        int[][] maxRow = maxX(x1,y1,x2,y2);
+        int[] xMinPoint = maxRow[1];
+        int[] xMaxPoint = maxRow[0];
         int x = xMaxPoint[0];
         int col = xMinPoint[1];
         if (step == -1){
             x = xMinPoint[0];
             col = xMaxPoint[1];
         }
-        if ((map[x][col] == 0 || x1==x2) && checkLineX(map,xMaxPoint[0],xMinPoint[0],col)){
-            x += step;
-            while (map[x][xMaxPoint[1]] == 0 && map[x][xMinPoint[1]] == 0){
-                if (checkLineX(map, xMaxPoint[1], xMinPoint[1], x)){
-                    return x;
-                }
-                x += step;
+        if (map[x][col] == 0 || x1 == x2) { // map[x][col] == 0 thi co kha nang vao truong hop chu L hoac x1 == x2 se la TH chu U
+            if (checkLineY(map, xMaxPoint[0], xMinPoint[0], col)) {
+                do {
+                    if (checkLineX(map, xMaxPoint[1], xMinPoint[1], x)) {
+                        return x;
+                    }
+                    x += step;
+                } while (map[x][xMaxPoint[1]] == 0 && map[x][xMinPoint[1]] == 0);
             }
         }
         return -1;
