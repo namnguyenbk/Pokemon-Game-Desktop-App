@@ -94,6 +94,7 @@ public class Matching {
             x = xMinPoint[0];
             col = xMaxPoint[1];
         }
+<<<<<<< HEAD
         if (map[x][col] == 0 || x1 == x2) { // map[x][col] == 0 thi co kha nang vao truong hop chu L hoac x1 == x2 se la TH chu U
             if (checkLineY(map, xMaxPoint[0], xMinPoint[0], col)) {
                 do {
@@ -102,6 +103,15 @@ public class Matching {
                     }
                     x += step;
                 } while (map[x][xMaxPoint[1]] == 0 && map[x][xMinPoint[1]] == 0);
+=======
+        if ((map[x][col] == 0 || x1==x2) && checkLineY(map,xMaxPoint[0],xMinPoint[0],col)){
+            x += step;
+            while (map[x][xMaxPoint[1]] == 0 && map[x][xMinPoint[1]] == 0){
+                if (checkLineX(map, xMaxPoint[1], xMinPoint[1], x)){
+                    return x;
+                }
+                x += step;
+>>>>>>> 1b3aad3bf11f05565a04237174fa315438578a20
             }
         }
         return -1;
@@ -110,6 +120,12 @@ public class Matching {
 
     // Y tuong: ket qua tra ve la toa do cua 2 diem tu do ve nen mot duong thang ma 2 diem da kiem tra se noi vuong goc vao duong thang do
     public static final int[][] checkTwoPoint(int[][] map, int x1, int y1, int x2, int y2) {
+//        System.out.println("X1: " + x1 );
+//        System.out.println("Y1: " + y1 );
+//        System.out.println(map[x1][y1]);
+//        System.out.println("X2: " + x2 );
+//        System.out.println("Y2: " + y2 );
+//        System.out.println(map[x2][y2]);
         if (map[x1][y1] != map[x2][y2]) return new int[][]{};
         if (x1==x2 && y1==y2) return new int[][]{};
         if (x1 == x2) {

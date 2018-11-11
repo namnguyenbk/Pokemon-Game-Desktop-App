@@ -19,7 +19,7 @@ public class LastPlay implements Serializable {
         this.currentTime = 0;
     }
 
-    public LastPlay(int score, int level,int suggestNum,int currentTime, GameMap gameMap, boolean isTurnOnSound, boolean isTurnOnMusic) {
+    public LastPlay(int score, int level,int suggestNum,int currentTime, GameMap gameMap) {
         this.suggestNum = suggestNum;
         this.score = score;
         this.level = level;

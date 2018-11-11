@@ -15,7 +15,7 @@ import java.io.IOException;
 
 public class Game extends Application {
     private static Scene startScene;
-    private static PlayGameScene playGameScene;
+//    private static PlayGameScene playGameScene;
     private static Stage mainStage;
     @Override
     public void start(Stage primaryStage) throws IOException {
@@ -28,8 +28,7 @@ public class Game extends Application {
         startScene = new Scene(start, 805, 555);
         mainStage.setResizable(false);
         mainStage.initStyle(StageStyle.UNDECORATED);
-        mainStage.setScene(startScene);
-        mainStage.show();
+        setStartScene();
     }
 
     private void addIconBtnMenu(Parent parent){
@@ -52,15 +51,21 @@ public class Game extends Application {
     public static Stage getMainStage(){
         return mainStage;
     }
+
+    public static void setStartScene(){
+        mainStage.setScene(startScene);
+        mainStage.show();
+    }
+
     public  Scene getStartScene(){
         return startScene;
     }
-    public  PlayGameScene getPlayStage(){
-        return playGameScene;
-    }
-    public  void setPlayScene( PlayGameScene playScene){
-        playGameScene = playScene;
-    }
+//    public  PlayGameScene getPlayStage(){
+//        return playGameScene;
+//    }
+//    public  void setPlayScene( PlayGameScene playScene){
+//        playGameScene = playScene;
+//    }
     public static void init(String[] args) {
         launch(args);
     }

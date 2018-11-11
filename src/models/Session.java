@@ -14,7 +14,6 @@ public class Session {
         this.lastPlay = lastPlay;
         this.timeRemaining = 5*60 - this.lastPlay.getCurrentTime();
     }
-    // getter and setter
     public int getTimeRemaining() {
         return timeRemaining;
     }
@@ -31,11 +30,6 @@ public class Session {
         this.lastPlay = lastPlay;
     }
 
-    // decre time remaining
-    public void decreTimeRemaining(){
-        this.timeRemaining -= 1;
-    }
-    // restart session
     public Session restartSession(){
         this.timeRemaining = 5*60;
         this.lastPlay.setScore(0);
