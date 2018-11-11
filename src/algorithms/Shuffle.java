@@ -117,7 +117,7 @@ public class Shuffle {
                 }
             }
         }
-        return map;
+        return removeSymmetric(map);
     }
 
     public static final int[][] shuffleByCol(int[][] map){
@@ -168,10 +168,60 @@ public class Shuffle {
                 }
             }
         }
-        return map;
+        return removeSymmetric(map);
     }
 
+    public static int[][] removeSymmetric(int[][] map){
+        int x1,x2,y1,y2;
+        x1 = 0;
+        x2 = 10;
+        y1 = 0;
+        y2 = 17;
+        while(!(((x2 <= x1)&&(y2 <= y1))||((y2 >= y1) &&(x2 < x1)))){
+            if((map[x1][y1] != 0)&& (map[x1][y1] == map[x2][y2])&&(x2 == map.length - (x1 + 1))&&(y2 == map[1].length - (y1 + 1))){
+                //System.out.println("find: ("+x1+","+y1+")"+" x ("+x2+","+y2+")");
+                swap(map,x2,y2,x1,y2);
+                y2 = y2 -1;
+                if(y2 < 0){
+                    x2 = x2 -1;
+                    y2 = 17;
+                    if(x2 < 0){
+                        break;
+                    }
+                }
 
+
+                y1 = y1 + 1;
+                if(y1 > 17){
+                    x1 = x1 + 1;
+                    y1 = 0;
+                    if(x1 > 10){
+                        break;
+                    }
+                }
+            }else {
+                y2 = y2 -1;
+                if(y2 < 0){
+                    x2 = x2 -1;
+                    y2 = 17;
+                    if(x2 < 0){
+                        break;
+                    }
+                }
+
+
+                y1 = y1 + 1;
+                if(y1 > 17){
+                    x1 = x1 + 1;
+                    y1 = 0;
+                    if(x1 > 10){
+                        break;
+                    }
+                }
+            }
+        }
+        return map;
+    }
     private static final int[][] reverseRow(int[][] map, int row, int colLength) {
         for (int i = 1; i < colLength / 2; i++) {
             swap(map, row, i, row, colLength - i - 1);
