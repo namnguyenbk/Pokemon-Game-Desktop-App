@@ -6,6 +6,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
+import main.Main;
 import ui.controller.PlayGameController;
 import ui.utility.Utility;
 import ui.view.game.Game;
@@ -31,7 +32,12 @@ public class PlayGameScene {
     private void addToolbar( Parent root){
         Utility.setIconButton(root, "#scoreView", "src/resource/image/scores.png",30.0, 30.0);
         Utility.setIconButton(root, "#shuffleBtn", "src/resource/image/replay.png",30.0, 30.0);
-        Utility.setIconButton(root, "#mediaBtn", "src/resource/image/sound.png",30.0, 30.0);
+        if ( Main.media.getMusic()){
+            Utility.setIconButton(root, "#mediaBtn", "src/resource/image/soundeffect.png",30.0, 30.0);
+        }else {
+            Utility.setIconButton(root, "#mediaBtn", "src/resource/image/soundeffectmute.png",30.0, 30.0);
+        }
+//        Utility.setIconButton(root, "#mediaBtn", "src/resource/image/soundeffect.png",30.0, 30.0);
         Utility.setIconButton(root, "#saveGameBtn", "src/resource/image/save.png",30.0, 30.0);
         Utility.setIconButton(root, "#backToGamebtn", "src/resource/image/quit.png",30.0, 30.0);
     }

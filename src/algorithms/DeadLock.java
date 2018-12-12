@@ -2,7 +2,7 @@ package algorithms;
 import java.util.ArrayList;
 
 public class DeadLock {
-    static class pokemon{
+    public static class pokemon{
         public int id;
         public int rowIndex;
         public int colIndex;
@@ -29,6 +29,7 @@ public class DeadLock {
         }
         return listPokemon;
     }
+
     public static ArrayList<ArrayList<pokemon>> updateStatusMap(ArrayList<ArrayList<pokemon>> listPokemon,int id, int x1, int y1, int x2, int y2){
 //        pokemon p1 = new pokemon(id, x1, y1);
 //        pokemon p2 = new pokemon(id, x2, y2);
@@ -42,24 +43,28 @@ public class DeadLock {
         }
         return listPokemon;
     }
+
     public static boolean isDeadLock(ArrayList<ArrayList<pokemon>> listPokemon,int[][]map){
         for(int i = 1 ; i < 37; i++){
-            System.out.println("=================================");
+//            System.out.println("=================================");
             for(int j = 0 ; j < listPokemon.get(i).size(); j++){
+                pokemon point1 = listPokemon.get(i).get(j);
                 for(int k = j + 1; k < listPokemon.get(i).size(); k++){
-                    System.out.print("check: ");
-                    System.out.print("("+listPokemon.get(i).get(j).id+" , "+listPokemon.get(i).get(j).rowIndex+" , "+listPokemon.get(i).get(j).colIndex+")");
-                    System.out.print(" => ");
-                    System.out.print("("+listPokemon.get(i).get(k).id+" , "+listPokemon.get(i).get(k).rowIndex+" , "+listPokemon.get(i).get(k).colIndex+")");
-                    if(Matching.checkTwoPoint(map, i, j, i, k).length > 0){
-                        System.out.println(" can continue Fucking the game!");
+//                    System.out.print("check: ");
+//                    System.out.print("("+listPokemon.get(i).get(j).id+" , "+listPokemon.get(i).get(j).rowIndex+" , "+listPokemon.get(i).get(j).colIndex+")");
+//                    System.out.print(" => ");
+//                    System.out.print("("+listPokemon.get(i).get(k).id+" , "+listPokemon.get(i).get(k).rowIndex+" , "+listPokemon.get(i).get(k).colIndex+")");
+                    pokemon point2 = listPokemon.get(i).get(k);
+                    if(Matching.checkTwoPoint(map, point1.rowIndex, point1.colIndex, point2.rowIndex, point2.colIndex).length == 2){
+//                        System.out.println(" can continue Fucking the game!");
                         return false;
                     }
                 }
-                System.out.println();
+//                System.out.println();
             }
-            System.out.println("=================================");
+//            System.out.println("=================================");
         }
+        System.out.println(" Can't continue Fucking the game!");
         return true;
     }
 
@@ -77,7 +82,6 @@ public class DeadLock {
         mapDefault[9] = new int[]{0,  33, 29, 25, 34, 35, 31, 36, 36, 5,  9,  14, 18, 23, 27, 36, 36, 0};
         mapDefault[10]= new int[]{0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0};
 
-        // khởi tạo list ở ngoài class này, cái list trong này chỉ để test
         ArrayList<ArrayList<pokemon>> listPokemon = initStatusMap(mapDefault);
 
         for(int i = 0 ; i < listPokemon.size();i++){
@@ -95,7 +99,7 @@ public class DeadLock {
         System.out.println("After update:");
         for(int i = 0 ; i < listPokemon.size();i++){
             for(int j = 0; j < listPokemon.get(i).size(); j ++){
-                System.out.print("("+listPokemon.get(i).get(j).id+" , "+listPokemon.get(i).get(j).rowIndex+" , "+listPokemon.get(i).get(j).colIndex+")");
+                System.out.print("("+listPokemon.get(i).get(j).id+ " , " + listPokemon.get(i).get(j).rowIndex + " , " + listPokemon.get(i).get(j).colIndex + ")");
             }
             System.out.println();
         }

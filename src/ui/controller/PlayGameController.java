@@ -1,5 +1,6 @@
 package ui.controller;
 
+import algorithms.DeadLock;
 import algorithms.Matching;
 import algorithms.Shuffle;
 import javafx.animation.KeyFrame;
@@ -63,11 +64,13 @@ public class PlayGameController implements Initializable {
     public static LastPlay lastPlay ;
 
     public static final void newGame(){
+
         Main.map = Shuffle.init();
-        LastPlay lastPlayTemp = new LastPlay(0, 1, 5, 0, null);
+        LastPlay lastPlayTemp = new LastPlay(0, 1, 50, 0, null);
         GameMap gameMapTemp = new GameMap();
         lastPlayTemp.setGameMap(gameMapTemp);
         Main.session.setLastPlay(lastPlayTemp);
+        Main.listStateMapPokemon = DeadLock.initStatusMap( Main.map);
         lastPlay = Main.session.getLastPlay();
         playScene = new PlayGameScene();
         updateScore(0);
@@ -103,6 +106,7 @@ public class PlayGameController implements Initializable {
         if( suggestNum > 0){
             Main.map = Shuffle.updateCurrentMap(Main.map);
             changeMap();
+            Main.listStateMapPokemon = DeadLock.initStatusMap(Main.map);
             lastPlay.setSuggestNum(suggestNum - 1);
         }
 
@@ -114,7 +118,7 @@ public class PlayGameController implements Initializable {
     }
 
     public void toggleSound(){
-        ToolBarController.toggleSound();
+        ToolBarController.toggleMusic( StartGameController.musicPlayer, mediaBtn );
     }
 
     public static final Line drawLine( double x1, double y1, double x2, double y2){
@@ -169,8 +173,13 @@ public class PlayGameController implements Initializable {
 
                 int level = lastPlay.getLevel();
                 if ( level > 1){
-
                     changeMap();
+                }
+                while ( DeadLock.isDeadLock( Main.listStateMapPokemon, Main.map)){
+                    System.out.println("Dead lock!");
+                    Main.map = Shuffle.updateCurrentMap(Main.map);
+                    changeMap();
+                    Main.listStateMapPokemon = DeadLock.initStatusMap(Main.map);
                 }
             }
         }else {
@@ -207,6 +216,7 @@ public class PlayGameController implements Initializable {
             alert.setHeaderText("Số điểm của bạn là: " + lastPlay.getScore());
             Optional<ButtonType> option = alert.showAndWait();
             if(option.get() == ButtonType.OK){
+                Game.setStartScene();
             }else {
                 Game.setStartScene();
             }

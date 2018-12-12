@@ -23,12 +23,12 @@ public class StartGameController implements Initializable {
     private Button continueGameBtn;
     @FXML
     private Button controlMusic;
-    private MediaPlayer musicPlayer;
+    public static MediaPlayer musicPlayer;
     private Media music;
     private Button newGameBtn;
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-//        musicPlayer = ToolBarController.loadMedia( musicPlayer, music, "src/resource/sound/music3.mp3");
+        musicPlayer = ToolBarController.loadMedia( musicPlayer, music, "src/resource/sound/nhacnen.mp3");
         setVisbleContinueGame();
     }
     public void toggleMusic(ActionEvent event){
