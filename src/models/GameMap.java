@@ -88,6 +88,7 @@ public class GameMap {
         this.mapPokemon = setMapPokemon(Main.map);
         this.lastMapPokemon = null;
         this.length = 144;
+//        this.length = 8;
         this.height = 9;
         this.width = 16;
         this.level = 0;

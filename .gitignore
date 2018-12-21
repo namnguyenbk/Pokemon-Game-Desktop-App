@@ -1,1 +1,11 @@
 out/
+.DS_Store
+#.idea/artifacts/Pokemon_Game_jar.xml
+#.idea/compiler.xml
+#pokemon-game.properties
+#src/resource/.DS_Store
+#src/META-INF/MANIFEST.MF
+#src/.DS_Store
+#out/production/Pokemon-Game/ui/view/style.css
+#out/production/Pokemon-Game/ui/view/Game.class
+__artifacts_temp/

@@ -54,6 +54,7 @@ public class Game extends Application {
 
     public static void setStartScene(){
         mainStage.setScene(startScene);
+        mainStage.centerOnScreen();
         mainStage.show();
     }
 

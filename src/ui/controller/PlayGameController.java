@@ -57,14 +57,14 @@ public class PlayGameController implements Initializable {
     @FXML
     public static  BorderPane borderPanePlayGame ;
     protected static  Timeline task;
-    MediaPlayer soundPlayer;
-    Media sound;
+    protected static  SoundEffect soundEffect;
     private static PlayGameScene playScene;
 
     public static LastPlay lastPlay ;
 
     public static final void newGame(){
-
+        soundEffect = new SoundEffect();
+        soundEffect.start();
         Main.map = Shuffle.init();
         LastPlay lastPlayTemp = new LastPlay(0, 1, 50, 0, null);
         GameMap gameMapTemp = new GameMap();
@@ -166,6 +166,8 @@ public class PlayGameController implements Initializable {
             tempPkm1.button.setVisible(false);
             tempPkm2.button.setVisible(false);
             updateScore(100);
+            soundEffect.mute();
+            soundEffect.play();
             Main.updateMap(x1, y1, x2, y2);
             if ( isCompletedLevel()){
                 gotoNextLevel();
@@ -175,12 +177,15 @@ public class PlayGameController implements Initializable {
                 if ( level > 1){
                     changeMap();
                 }
-                while ( DeadLock.isDeadLock( Main.listStateMapPokemon, Main.map)){
-                    System.out.println("Dead lock!");
-                    Main.map = Shuffle.updateCurrentMap(Main.map);
-                    changeMap();
-                    Main.listStateMapPokemon = DeadLock.initStatusMap(Main.map);
-                }
+//                if(lastPlay.getGameMap().getLength() != 2){
+                    while ( DeadLock.isDeadLock( Main.listStateMapPokemon, Main.map)){
+                        System.out.println("Dead lock!");
+                        Main.map = Shuffle.updateCurrentMap(Main.map);
+                        changeMap();
+                        Main.listStateMapPokemon = DeadLock.initStatusMap(Main.map);
+                    }
+//                }
+
             }
         }else {
         }
@@ -205,6 +210,7 @@ public class PlayGameController implements Initializable {
             Main.map = Shuffle.init();
             changeMap();
             lastPlay.getGameMap().setLength(144);
+//            lastPlay.getGameMap().setLength(8);
             lastPlay.setLevel( lastPlay.getLevel() + 1);
             lastPlay.setSuggestNum( lastPlay.getSuggestNum() + 1);
             setTextOnLevel(Integer.toString(lastPlay.getLevel()));
@@ -256,7 +262,6 @@ public class PlayGameController implements Initializable {
         Text levelText = (Text)PlayGameController.borderPanePlayGame.lookup("#level");
         levelText.setFill(Color.WHITE);
         levelText.setText("LV " +level);
-
     }
 }
 
@@ -294,4 +299,25 @@ class CountDownTimer extends Thread{
         PlayGameController.task.play();
     }
 
+}
+
+class SoundEffect extends Thread{
+    private MediaPlayer soundPlayer;
+    private static Media sound;
+    @Override
+    public void run() {
+        soundPlayer = ToolBarController.loadMedia( soundPlayer, sound, "src/resource/sound/success.mp3");
+        soundPlayer.setCycleCount(1);
+//        soundPlayer.setStartTime(Duration.seconds(0.5));
+//        soundPlayer.setStopTime(Duration.seconds(0.75));
+        soundPlayer.stop();
+    }
+
+    public void play(){
+        soundPlayer.play();
+    }
+
+    public void mute(){
+        soundPlayer.stop();
+    }
 }

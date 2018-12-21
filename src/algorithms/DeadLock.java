@@ -64,7 +64,7 @@ public class DeadLock {
             }
 //            System.out.println("=================================");
         }
-        System.out.println(" Can't continue Fucking the game!");
+        System.out.println(" Can't continue *beep* the game!");
         return true;
     }
 
